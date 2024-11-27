@@ -1,0 +1,135 @@
+/*fonts-fontsizes*/
+.raleway{
+    font-family:"Raleway",sans-serif ;
+    font-weight: 700;
+}
+.raleway18px{
+    font-family:"Raleway",sans-serif ;
+    font-size: 18px;
+    font-weight: 900;
+}
+.raleway13px{
+    font-family:"Raleway",sans-serif ;
+    font-size: 13px;
+    font-weight: 900;
+}
+.raleway11px{
+    font-family:"Raleway",sans-serif ;
+    font-size: 11px !important;
+}
+.raleway9px{
+    font-family:"Raleway",sans-serif ;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.questrial{
+    font-family: "Questrial",sans-serif;
+    font-weight: 700;
+}
+.questrial11px{
+    font-family: "Questrial",sans-serif;
+    font-size: 11px !important;
+    font-weight: 400;
+}
+.questrial10px{
+    font-family: "Questrial",sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+}
+.questrial14px{
+    font-family: "Questrial",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+.questrial13px{
+    font-family: "Questrial",sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+
+
+/*text color*/
+.colorgreen{
+    color: #b8cd06;
+}
+
+/*padding-margin*/
+.pe-140{
+    padding-right: 140px;
+}
+.ps-150{
+    padding-left: 150px !important;
+}
+
+/*header-nav*/
+header{
+    font-size: 10px;
+}
+header a:hover{
+    color:#b8cd06 !important;
+}
+.nav-item a:hover{
+    background: #b8cd06;
+    color: white !important;
+}
+.active{
+    background: #b8cd06 !important;
+    border-radius: 50px;
+    color: white !important;
+}
+/*line height voor header*/
+.lh-xl{
+    line-height: 50px;
+}
+
+
+
+
+/*choose color boxes*/
+.color-box {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/*tags classes*/
+.tags{
+    background-color: #eeeeee;
+}
+.tags:hover{
+    background-color: #b8cd06;
+    color: white !important;
+    cursor: pointer;
+}
+
+/*links classes*/
+.links:hover{
+    color: #b8cd06 !important;
+}
+
+
+/*inputvelden styling*/
+/* range thumb kleur */
+input[type="range"]::-webkit-slider-thumb {
+    background: #b8cd06;
+}
+/* email placeholderkleur */
+input::placeholder {
+    color: white;
+}
+
+
+
+
+/*op kleinere schermen margins wegdoen*/
+@media (max-width: 767px) {
+    .carousel {
+        margin: 0 auto;
+    }
+
+}
+
+
