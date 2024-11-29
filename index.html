@@ -2,66 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> <!--bootstrap link-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!--bootstrap icons-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!--google fonts-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"><!--font awesome icons-->
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="css/style.css" rel="stylesheet"><!--style.css-->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+    <!--bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!--bootstrap icons-->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"> <!--google fonts-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!--font awesome icons-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!--animatie met aos-->
 
     <title>EX ZO</title>
 </head>
 <body>
 <header class="container-fluid text-secondary">
     <!--header top-->
-    <div class="px-5 row border-bottom lh-xl">
-        <div id="header-contact" class="row align-items-center d-none d-xl-flex">
-        <!-- contact info -->
-        <div class="col-md-4 d-flex align-items-center flex-wrap">
-            <div class="border-end border-start px-3">
-                <span class="fw-bold pe-1 raleway">CONTACT US:</span>
-                <a href="#" class="text-decoration-none text-secondary questrial fw-light rounded">+3 (523) 555 123 8745</a>
+    <div class="px-5 row border-bottom lh-xl" data-aos="fade-down">
+        <!--contact section getoond op grotere schermen alleen-->
+        <div class="row align-items-center d-none d-xl-flex" id="header-contact">
+            <!-- contact info -->
+            <div class="col-md-4 d-flex align-items-center flex-wrap">
+                <div class="border-end border-start px-3">
+                    <span class="fw-bold pe-1 raleway">CONTACT US:</span>
+                    <a class="text-decoration-none text-secondary questrial fw-light rounded" href="#">+3 (523) 555 123
+                        8745</a>
+                </div>
+                <div class="border-end px-3">
+                    <span class="fw-bold pe-1 raleway">EMAIL:</span>
+                    <a class="text-decoration-none text-secondary questrial fw-light" href="#">OFFICE@EXZO.COM</a>
+                </div>
             </div>
-            <div class="border-end px-3">
-                <span class="fw-bold pe-1 raleway">EMAIL:</span>
-                <a href="#" class="text-decoration-none text-secondary questrial fw-light">OFFICE@EXZO.COM</a>
-            </div>
-        </div>
 
-        <!-- login-taal-winkelwagen -->
-        <div class="col-md-8 d-flex justify-content-end align-items-center">
-            <div class="d-flex align-items-center border-start border-end px-4">
-                <a href="#" class="text-decoration-none text-secondary raleway text-uppercase">Login</a>
-                <span class="ps-1 questrial fw-light">OR</span>
-                <a href="#" class="ps-1 text-decoration-none text-secondary raleway text-uppercase">Register</a>
-            </div>
-            <div class="dropdown d-sm-flex d-none px-4 border-end">
-                <a class="dropdown-toggle text-decoration-none text-secondary fw-bold" role="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    EN
-                </a>
-                <ul class="dropdown-menu rounded-0 rounded-bottom" aria-labelledby="languageDropdown">
-                    <li><a class="dropdown-item" href="#">EN</a></li>
-                    <li><a class="dropdown-item" href="#">NL</a></li>
-                </ul>
-            </div>
-            <div class="border-end px-4">
-                <a href="#" class="text-dark"><i class="bi bi-heart fs-6"></i></a>
-            </div>
-            <div class="d-flex align-items-center border-end">
-                <a href="#" class="text-decoration-none text-secondary position-relative">
-                    <span class="px-2 raleway text-uppercase">Your Bag</span>
-                    <i class="bi bi-bag-fill pe-2 fs-6"></i>
-                    <!-- Badge toevoegen aan het icoon -->
-                    <span class="badge position-absolute top-0 start-100 translate-middle mt-3 me-3" style="background-color: #b8cd06">0</span>
-                </a>
-                <span class="px-3 questrial colorgreen">€0.00</span>
+            <!-- login-taal-winkelwagen -->
+            <div class="col-md-8 d-flex justify-content-end align-items-center">
+                <!--login or register links met hover-->
+                <div class="d-flex align-items-center border-start border-end px-4">
+                    <a class="text-decoration-none text-secondary raleway text-uppercase" href="#">Login</a>
+                    <span class="ps-1 questrial fw-light">OR</span>
+                    <a class="ps-1 text-decoration-none text-secondary raleway text-uppercase" href="#">Register</a>
+                </div>
+                <!--language dropdown menu-->
+                <div class="dropdown d-sm-flex d-none px-4 border-end">
+                    <a aria-expanded="false" class="dropdown-toggle text-decoration-none text-secondary fw-bold"
+                       data-bs-toggle="dropdown" id="languageDropdown" role="button">
+                        EN
+                    </a>
+                    <!--language options-->
+                    <ul aria-labelledby="languageDropdown" class="dropdown-menu rounded-0 rounded-bottom">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">NL</a></li>
+                    </ul>
+                </div>
+                <!--heart icoon-->
+                <div class="border-end px-4">
+                    <a class="text-dark" href="#"><i class="bi bi-heart fs-6"></i></a>
+                </div>
+                <!--cart section-->
+                <div class="d-flex align-items-center border-end">
+                    <a class="text-decoration-none text-secondary position-relative" href="#">
+                        <span class="px-2 raleway text-uppercase">Your Bag</span>
+                        <i class="bi bi-bag-fill pe-2 fs-6"></i>
+                        <!-- badge voor het icoon -->
+                        <span class="badge position-absolute top-0 start-100 translate-middle mt-3 me-3"
+                              style="background-color: #b8cd06">0</span>
+                    </a>
+                    <span class="px-3 questrial colorgreen">€0.00</span>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </header>
 
@@ -70,127 +85,173 @@
     <div class="container-fluid">
         <!-- logo -->
         <a class="navbar-brand" href="#">
-            <img src="./images/logo.png" alt="logo">
+            <img alt="logo" data-aos="fade-right" src="./images/logo.png">
         </a>
 
-        <!-- toggler btn offcanvas -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+        <!-- toggler knop voor offcanvas menu (voor kleinere schermen)-->
+        <button aria-controls="offcanvasMenu" class="navbar-toggler" data-bs-target="#offcanvasMenu"
+                data-bs-toggle="offcanvas"
+                type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- offcanvas menu -->
-        <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <!-- offcanvas menu (zichtbaar op kleinere schermen)-->
+        <div aria-labelledby="offcanvasMenuLabel" class="offcanvas offcanvas-end d-lg-none" id="offcanvasMenu"
+             tabindex="-1">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <!--sluit knop-->
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
             </div>
             <div class="offcanvas-body">
+                <!--items in offcanvas menu-->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown px-2 active">
-                        <a class="nav-link text-uppercase rounded-pill active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Home
+                    <!--menu item met dropdown-->
+                    <li class="nav-item dropdown ">
+                        <a aria-expanded="false" class="nav-link text-uppercase rounded-pill active px-2"
+                           data-bs-toggle="dropdown"
+                           href="#" role="button">
+                            Home <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
                         </a>
+                        <!--dropdown-->
                         <ul class="dropdown-menu rounded-0 rounded-bottom">
                             <li><a class="dropdown-item text-uppercase" href="#">Home 1</a></li>
                             <li><a class="dropdown-item text-uppercase" href="#">Home 2</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link rounded-pill text-uppercase" href="#">About us</a>
+                    <!--menu item-->
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">About us</a>
                     </li>
-                    <li class="nav-item dropdown px-2">
-                        <a class="nav-link rounded-pill text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
+                    <!--menu item met dropdown-->
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
+                           data-bs-toggle="dropdown" href="#"
+                           role="button">
+                            Products <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
                         </a>
+                        <!--dropdown-->
                         <ul class="dropdown-menu rounded-0 rounded-bottom">
                             <li><a class="dropdown-item" href="#">Services</a></li>
                             <li><a class="dropdown-item" href="#">Testimonials</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link rounded-pill text-uppercase" href="#">Services</a>
+                    <!--menu item-->
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Services</a>
                     </li>
-                    <li class="nav-item dropdown px-2">
-                        <a class="nav-link rounded-pill text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Blog
+                    <!--menu item met dropdown-->
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
+                           data-bs-toggle="dropdown" href="#"
+                           role="button">
+                            Blog <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
                         </a>
+                        <!--dropdown-->
                         <ul class="dropdown-menu rounded-0 rounded-bottom">
                             <li><a class="dropdown-item" href="#">Blog page</a></li>
                             <li><a class="dropdown-item" href="#">Blog Details</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown px-2">
-                        <a class="nav-link rounded-pill text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Gallery
+                    <!--menu item met dropdown-->
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
+                           data-bs-toggle="dropdown" href="#"
+                           role="button">
+                            Gallery <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
                         </a>
+                        <!--dropdown-->
                         <ul class="dropdown-menu rounded-0 rounded-bottom">
                             <li><a class="dropdown-item" href="#">Gallery 1</a></li>
                             <li><a class="dropdown-item" href="#">Gallery 2</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item rounded-pill px-2">
-                        <a class="nav-link rounded-pill text-uppercase" href="#">Pages</a>
+                    <!--menu item-->
+                    <li class="nav-item rounded-pill">
+                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Pages</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link rounded-pill text-uppercase" href="#">Contact</a>
+                    <!--menu item-->
+                    <li class="nav-item rounded-pill">
+                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
 
         <!-- menu voor grote schermen -->
-        <div class="collapse navbar-collapse d-none d-lg-block" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse d-none d-lg-block" data-aos="fade-left" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
+                <!-- dropdown item home-->
                 <li class="nav-item dropdown px-2 active">
-                    <a class="nav-link text-uppercase rounded-pill active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a aria-expanded="false" class="nav-link text-uppercase rounded-pill active"
+                       data-bs-toggle="dropdown"
+                       href="#" role="button">
                         Home
                     </a>
+                    <!--dropdown-->
                     <ul class="dropdown-menu rounded-0 rounded-bottom">
                         <li><a class="dropdown-item text-uppercase" href="#">Home 1</a></li>
                         <li><a class="dropdown-item text-uppercase" href="#">Home 2</a></li>
                     </ul>
                 </li>
+                <!--menu item-->
                 <li class="nav-item px-2">
                     <a class="nav-link rounded-pill text-uppercase" href="#">About us</a>
                 </li>
+                <!--dropdown item products-->
                 <li class="nav-item dropdown">
-                    <a class="nav-link rounded-pill text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase" data-bs-toggle="dropdown"
+                       href="#"
+                       role="button">
                         Products
                     </a>
+                    <!--dropdown-->
                     <ul class="dropdown-menu rounded-0 rounded-bottom">
                         <li><a class="dropdown-item" href="#">Services</a></li>
                         <li><a class="dropdown-item" href="#">Testimonials</a></li>
                     </ul>
                 </li>
+                <!--menu item-->
                 <li class="nav-item px-2">
                     <a class="nav-link rounded-pill text-uppercase" href="#">Services</a>
                 </li>
+                <!--dropdown item blog-->
                 <li class="nav-item dropdown px-2">
-                    <a class="nav-link rounded-pill text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase" data-bs-toggle="dropdown"
+                       href="#"
+                       role="button">
                         Blog
                     </a>
+                    <!--dropdown-->
                     <ul class="dropdown-menu rounded-0 rounded-bottom">
                         <li><a class="dropdown-item" href="#">Blog page</a></li>
                         <li><a class="dropdown-item" href="#">Blog Details</a></li>
                     </ul>
                 </li>
+                <!--dropdown item gallery-->
                 <li class="nav-item dropdown px-2">
-                    <a class="nav-link rounded-pill text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase" data-bs-toggle="dropdown"
+                       href="#"
+                       role="button">
                         Gallery
                     </a>
+                    <!--dropdown -->
                     <ul class="dropdown-menu rounded-0 rounded-bottom">
                         <li><a class="dropdown-item" href="#">Gallery 1</a></li>
                         <li><a class="dropdown-item" href="#">Gallery 2</a></li>
                     </ul>
                 </li>
+                <!--menu item-->
                 <li class="nav-item rounded-pill px-2">
                     <a class="nav-link rounded-pill text-uppercase" href="#">Pages</a>
                 </li>
+                <!--menu item-->
                 <li class="nav-item">
                     <a class="nav-link rounded-pill text-uppercase" href="#">Contact</a>
                 </li>
             </ul>
-            <p class="search-icon m-0 mx-lg-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <!--zoek knop met modal-->
+            <p class="search-icon m-0 mx-lg-5" data-bs-target="#exampleModal" data-bs-toggle="modal">
                 <i class="bi bi-search fs-5"></i>
             </p>
         </div>
@@ -199,153 +260,199 @@
 </nav>
 
 <div class="container">
+
     <div class="row mb-5">
+        <!--links met pijl icoon-->
         <div class="d-flex py-4 questrial11px text-secondary">
-            <a href="#" class="px-2 text-decoration-none text-secondary links">HOME</a><i class="fa-solid fa-angle-right align-items-end lh-sm"></i>
-            <a href="#" class="px-2 text-decoration-none text-secondary links">ACCESSORIES</a><i class="fa-solid fa-angle-right align-items-end lh-sm"></i>
-            <a href="#" class="px-2 text-decoration-none text-secondary links">GADGETS</a><i class="fa-solid fa-angle-right align-items-end lh-sm"></i>
-            <a href="#" class="px-2 text-decoration-none text-secondary links">SPORT GADGETS</a>
+            <a class="px-2 text-decoration-none text-secondary links" href="#">HOME</a><i
+                class="fa-solid fa-angle-right align-items-end lh-sm"></i>
+            <a class="px-2 text-decoration-none text-secondary links" href="#">ACCESSORIES</a><i
+                class="fa-solid fa-angle-right align-items-end lh-sm"></i>
+            <a class="px-2 text-decoration-none text-secondary links" href="#">GADGETS</a><i
+                class="fa-solid fa-angle-right align-items-end lh-sm"></i>
+            <a class="px-2 text-decoration-none text-secondary links" href="#">SPORT GADGETS</a>
         </div>
 
-        <div class="mt-5 d-flex"><!--begin producten en filters-->
-            <div class="col-md-3 col-sm-12 d-none d-lg-block">
+        <!-- Offcanvas voor filters -->
+        <div aria-labelledby="filtersOffcanvasLabel" class="offcanvas offcanvas-start" id="filtersOffcanvas"
+             tabindex="-1">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="filtersOffcanvasLabel">Filters</h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!--popular categories-->
                 <h4 class="raleway18px text-uppercase mb-2 mx-2">popular categories</h4>
                 <ul class="list-group list-group-flush text-uppercase fw-bold raleway11px">
-                    <li class="list-group-item btn-group dropend my-1">
-                        <a href="#" class="text-decoration-none text-secondary links" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="pe-2">Laptops & computers</span> <i class="fa-solid fa-angle-right"></i>
+                    <li class="list-group-item rounded-0 btn-group dropdown my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">Laptops & computers</span> <i class="fa-solid fa-angle-down"></i>
                         </a>
 
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">laptops & computers</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">video & photo cameras</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">smartphones</a></li>
-                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv & audio</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
                         </ul>
                     </li>
 
-                    <li class="list-group-item btn-group dropend my-1">
-                        <a href="#" class="text-decoration-none text-secondary links" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="pe-2">Video & Photo Cameras</span> <i class="fa-solid fa-angle-right"></i>
+                    <li class="list-group-item rounded-0 btn-group dropdown my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">Video & Photo Cameras</span> <i class="fa-solid fa-angle-down"></i>
                         </a>
 
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">laptops & computers</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">video & photo cameras</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">smartphones</a></li>
-                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv & audio</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
                         </ul>
                     </li>
 
-                    <li class="list-group-item btn-group dropend my-1">
-                        <a href="#" class="text-decoration-none text-secondary links" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="pe-2">smartphones</span> <i class="fa-solid fa-angle-right "></i>
+                    <li class="list-group-item rounded-0 btn-group dropdown my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">smartphones</span> <i class="fa-solid fa-angle-down "></i>
                         </a>
 
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">laptops & computers</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">video & photo cameras</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">smartphones</a></li>
-                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv & audio</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
                         </ul>
                     </li>
 
-                    <li class="list-group-item btn-group dropend my-1">
-                        <a href="#" class="text-decoration-none text-secondary links" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="pe-2">tv & audio</span> <i class="fa-solid fa-angle-right"></i>
+                    <li class="list-group-item rounded-0 btn-group dropdown my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">tv & audio</span> <i class="fa-solid fa-angle-down"></i>
                         </a>
 
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">laptops & computers</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">video & photo cameras</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">smartphones</a></li>
-                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv & audio</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
                         </ul>
                     </li>
 
-                    <li class="list-group-item btn-group dropend my-1">
-                        <a href="#" class="text-decoration-none text-secondary links" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="pe-2">gadgets</span>  <i class="fa-solid fa-angle-right"></i>
+                    <li class="list-group-item rounded-0 btn-group dropdown my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">gadgets</span> <i class="fa-solid fa-angle-down"></i>
                         </a>
 
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">laptops & computers</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">video & photo cameras</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">smartphones</a></li>
-                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv & audio</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
                         </ul>
                     </li>
 
-                    <li class="list-group-item btn-group dropend my-1">
-                        <a href="#" class="text-decoration-none text-secondary links" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="pe-2">car electronics</span><i class="fa-solid fa-angle-right "></i>
+                    <li class="list-group-item rounded-0 btn-group dropdown my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links  w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">car electronics</span><i class="fa-solid fa-angle-down "></i>
                         </a>
 
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">laptops & computers</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">video & photo cameras</a></li>
-                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase" href="#">smartphones</a></li>
-                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv & audio</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
                         </ul>
                     </li>
 
-                    <li class="list-group-item my-1">
-                        <a href="#" class="text-decoration-none text-secondary links">video games & consoles</a>
+                    <li class="list-group-item rounded-0 my-1">
+                        <a class="text-decoration-none text-secondary links" href="#">video games & consoles</a>
                     </li>
-                    <li class="list-group-item my-1">
-                        <a href="#" class="text-decoration-none text-secondary links">software</a>
+                    <li class="list-group-item rounded-0 my-1">
+                        <a class="text-decoration-none text-secondary links" href="#">software</a>
                     </li>
-                    <li class="list-group-item my-1">
-                        <a href="#" class="text-decoration-none text-secondary links">offeci accessories</a>
+                    <li class="list-group-item rounded-0 my-1">
+                        <a class="text-decoration-none text-secondary links" href="#">offeci accessories</a>
                     </li>
-                    <li class="list-group-item border-bottom my-1">
-                        <a href="#" class="text-decoration-none text-secondary links">accessories</a>
+                    <li class="list-group-item rounded-0 border-bottom my-1">
+                        <a class="text-decoration-none text-secondary links" href="#">accessories</a>
                     </li>
                 </ul>
 
+                <!-- Price range slider -->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2">Price</h4>
+                <label for="priceRangeOC"></label>
+                <input class="form-range" id="priceRangeOC" max="300" min="40" step="1" type="range">
+                <div class="raleway11px text-secondary fw-bold" id="rangeValueOC">Price: $40-</div>
 
-                <!--price range-->
-                <h4 class="raleway18px text-uppercase pt-5 mx-2">price</h4>
-                <label for="priceRange"></label>
-                <input type="range" class="form-range" min="40" max="300" step="1" id="priceRange">
-                <div id="rangeValue" class="raleway11px text-secondary fw-bold">Price: 0</div>
-
-
-                <!--brands checkboxes-->
-                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">brands</h4>
+                <!-- Brands checkboxes -->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">Brands</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault1">
+                    <input class="form-check-input" id="lg" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="lg">
                         LG
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault2">
+                    <input class="form-check-input" id="samsung" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="samsung">
                         SAMSUNG
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault3">
+                    <input class="form-check-input" id="apple" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="apple">
                         APPLE
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
-                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault5">
+                    <input class="form-check-input" id="htc" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="htc">
                         HTC
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
-                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault6">
+                    <input class="form-check-input" id="google" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="google">
                         GOOGLE
                     </label>
                 </div>
 
-                <!--choose color-->
-                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">choose color</h4>
+                <!-- Choose color options -->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">Choose color</h4>
                 <div class="d-flex justify-content-evenly pe-5">
                     <div class="color-box" style="background-color: #a7f050"></div>
                     <div class="color-box" style="background-color: #50e3f0"></div>
@@ -357,41 +464,40 @@
                     <div class="color-box" style="background-color: #bf584b"></div>
                 </div>
 
-
-            <!--operation system checkboxes-->
-                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">operation system</h4>
+                <!-- Operation system checkboxes -->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">Operation system</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="default1">
-                    <label class="form-check-label questrial11px text-secondary" for="default1">
+                    <input class="form-check-input" id="android" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="android">
                         ANDROID
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="default2">
-                    <label class="form-check-label questrial11px text-secondary" for="default2">
+                    <input class="form-check-input" id="ios" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="ios">
                         IOS
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="default3">
-                    <label class="form-check-label questrial11px text-secondary" for="default3">
+                    <input class="form-check-input" id="windows" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="windows">
                         WINDOWS PHONE
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="default4">
-                    <label class="form-check-label questrial11px text-secondary" for="default4">
+                    <input class="form-check-input" id="symbian" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="symbian">
                         SYMBIAN
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="default5">
-                    <label class="form-check-label questrial11px text-secondary" for="default5">
+                    <input class="form-check-input" id="bb" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="bb">
                         BLACKBERRY OS
                     </label>
                 </div>
 
-               <!--popular tags-->
+                <!--popular tags-->
                 <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">Popular Tags</h4>
                 <div class="row pe-5">
                     <div class="col-lg-4 col-md-3 col-6 mb-2">
@@ -432,14 +538,286 @@
                     </div>
                 </div>
 
-            </div><!--colmd3(filters)-->
+            </div>
+        </div><!-- Offcanvas voor filters  -->
 
+        <!--begin producten en filters-->
+        <div class="mt-5 d-flex">
+            <div class="col-md-3 col-sm-12 d-none d-lg-block"><!--filters begin-->
+                <!--popular categories filters met dropend-->
+                <h4 class="raleway18px text-uppercase mb-2 mx-2">popular categories</h4>
+                <ul class="list-group list-group-flush text-uppercase fw-bold raleway11px">
+                    <li class="list-group-item rounded-0 btn-group dropend my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">Laptops & computers</span> <i class="fa-solid fa-angle-right"></i>
+                        </a>
+
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="list-group-item rounded-0  btn-group dropend my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">Video & Photo Cameras</span> <i class="fa-solid fa-angle-right"></i>
+                        </a>
+
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="list-group-item rounded-0  btn-group dropend my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">smartphones</span> <i class="fa-solid fa-angle-right "></i>
+                        </a>
+
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="list-group-item rounded-0  btn-group dropend my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">tv & audio</span> <i class="fa-solid fa-angle-right"></i>
+                        </a>
+
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="list-group-item rounded-0  btn-group dropend my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">gadgets</span> <i class="fa-solid fa-angle-right"></i>
+                        </a>
+
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="list-group-item rounded-0  btn-group dropend my-1">
+                        <a aria-expanded="false"
+                           class="text-decoration-none text-secondary links  w-100 d-flex justify-content-between"
+                           data-bs-toggle="dropdown" href="#">
+                            <span class="pe-2">car electronics</span><i class="fa-solid fa-angle-right "></i>
+                        </a>
+
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">laptops & computers</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">video & photo cameras</a></li>
+                            <li><a class="dropdown-item raleway11px border-bottom text-secondary text-uppercase"
+                                   href="#">smartphones</a></li>
+                            <li><a class="dropdown-item raleway11px text-secondary text-uppercase" href="#">tv &
+                                audio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="list-group-item rounded-0  my-1">
+                        <a class="text-decoration-none text-secondary links" href="#">video games & consoles</a>
+                    </li>
+                    <li class="list-group-item rounded-0  my-1">
+                        <a class="text-decoration-none text-secondary links" href="#">software</a>
+                    </li>
+                    <li class="list-group-item rounded-0  my-1">
+                        <a class="text-decoration-none text-secondary links" href="#">offeci accessories</a>
+                    </li>
+                    <li class="list-group-item rounded-0  border-bottom my-1">
+                        <a class="text-decoration-none text-secondary links" href="#">accessories</a>
+                    </li>
+                </ul>
+
+
+                <!--price range-->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2">price</h4>
+                <label for="priceRange"></label>
+                <input class="form-range" id="priceRange" max="300" min="40" step="1" type="range">
+                <div class="raleway11px text-secondary fw-bold" id="rangeValue">Price: $40-</div>
+
+
+                <!--brands checkboxes-->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">brands</h4>
+                <div class="form-check">
+                    <input class="form-check-input" id="flexCheckDefault1" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault1">
+                        LG
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="flexCheckDefault2" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault2">
+                        SAMSUNG
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="flexCheckDefault3" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault3">
+                        APPLE
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="flexCheckDefault5" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault5">
+                        HTC
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="flexCheckDefault6" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="flexCheckDefault6">
+                        GOOGLE
+                    </label>
+                </div>
+
+                <!--choose color-->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">choose color</h4>
+                <div class="d-flex justify-content-evenly pe-5">
+                    <div class="color-box" style="background-color: #a7f050"></div>
+                    <div class="color-box" style="background-color: #50e3f0"></div>
+                    <div class="color-box" style="background-color: #eeeeee"></div>
+                    <div class="color-box" style="background-color: #4d900c"></div>
+                    <div class="color-box" style="background-color: #edb82c"></div>
+                    <div class="color-box" style="background-color: #7d3f99"></div>
+                    <div class="color-box" style="background-color: #3481c7"></div>
+                    <div class="color-box" style="background-color: #bf584b"></div>
+                </div>
+
+
+                <!--operation system checkboxes-->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">operation system</h4>
+                <div class="form-check">
+                    <input class="form-check-input" id="default1" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="default1">
+                        ANDROID
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="default2" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="default2">
+                        IOS
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="default3" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="default3">
+                        WINDOWS PHONE
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="default4" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="default4">
+                        SYMBIAN
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="default5" type="checkbox" value="">
+                    <label class="form-check-label questrial11px text-secondary" for="default5">
+                        BLACKBERRY OS
+                    </label>
+                </div>
+
+                <!--popular tags-->
+                <h4 class="raleway18px text-uppercase pt-5 mx-2 pb-2">Popular Tags</h4>
+                <div class="row pe-5">
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">HEADPHONES</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">ACCESSORIES</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">NEW</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">WIRELESS</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">CABLES</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">DEVICES</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">GADGETS</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">BRANDS</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">REPLACEMENTS</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">CASES</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">CABLES</a>
+                    </div>
+                    <div class="col-lg-4 col-md-3s col-6 mb-2">
+                        <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2">PROFESSIONAL</a>
+                    </div>
+                </div>
+
+            </div><!--col-md-3(filters)-->
             <div class="col-md-9 col-sm-12">
                 <!--slider begin-->
-                <div id="carouselExampleIndicators" class="carousel slide col-sm-12 ms-5 mb-5">
+                <div class="carousel slide col-sm-12 ms-5 mb-5" id="carouselExampleIndicators">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active rounded-circle" style="width: 10px; height: 10px;border: 3px #b8cd06 solid;background: transparent" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="width: 10px; height: 10px;border: 3px #b8cd06 solid; background: transparent" class="rounded-circle"></button>
+                        <button aria-current="true" aria-label="Slide 1" class="active rounded-circle"
+                                data-bs-slide-to="0"
+                                data-bs-target="#carouselExampleIndicators"
+                                style="width: 10px; height: 10px;border: 3px #b8cd06 solid;background: transparent"
+                                type="button"></button>
+                        <button aria-label="Slide 2" class="rounded-circle" data-bs-slide-to="1"
+                                data-bs-target="#carouselExampleIndicators"
+                                style="width: 10px; height: 10px;border: 3px #b8cd06 solid; background: transparent"
+                                type="button"></button>
                     </div>
                     <div class="carousel-inner rounded-4">
                         <!--eerste slide-->
@@ -447,10 +825,15 @@
                             <div class="d-flex align-items-center justify-content-end pe-140 img-fluid "
                                  style="height: 400px; background-image: url('images/thumbnail1.png'); background-size: cover; background-position: center;">
                                 <div class="text-center">
-                                    <p class="questrial text-secondary text-uppercase lh-1 mb-1" style="font-size: 14px; font-weight: 400;">don't miss!</p>
-                                    <h5 class="questrial colorgreen text-uppercase fw-light lh-1 " style="font-size: 30px">up to %70</h5>
-                                    <h6 class="raleway18px fw-boldest text-white text-uppercase pb-3">best android tv box</h6>
-                                    <a href="#" class="raleway11px rounded-pill text-white text-decoration-none px-3 py-2 text-uppercase fw-bold" style="background-color: #b8cd06">learn more</a>
+                                    <p class="questrial text-secondary text-uppercase lh-1 mb-1"
+                                       style="font-size: 14px; font-weight: 400;">don't miss!</p>
+                                    <h5 class="questrial colorgreen text-uppercase fw-light lh-1 "
+                                        style="font-size: 30px">up to %70</h5>
+                                    <h6 class="raleway18px fw-boldest text-white text-uppercase pb-3">best android tv
+                                        box</h6>
+                                    <a class="raleway11px rounded-pill text-white text-decoration-none px-3 py-2 text-uppercase fw-bold"
+                                       href="#"
+                                       style="background-color: #b8cd06">learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -459,33 +842,54 @@
                             <div class="d-flex align-items-center justify-content-end pe-140 img-fluid"
                                  style="height: 400px; background-image: url('images/thumbnail2.png'); background-size: cover; background-position: center;">
                                 <div class="text-center">
-                                    <p class="questrial text-secondary text-uppercase lh-1 mb-1" style="font-size: 14px; font-weight: 400;">don't miss!</p>
-                                    <h5 class="questrial colorgreen text-uppercase fw-light lh-1 " style="font-size: 30px">up to %70</h5>
-                                    <h6 class="raleway18px fw-boldest text-white text-uppercase pb-3">best android tv box</h6>
-                                    <a href="#" class="raleway11px rounded-pill text-white text-decoration-none px-3 py-2 text-uppercase fw-bold" style="background-color: #b8cd06">learn more</a>
+                                    <p class="questrial text-secondary text-uppercase lh-1 mb-1"
+                                       style="font-size: 14px; font-weight: 400;">don't miss!</p>
+                                    <h5 class="questrial colorgreen text-uppercase fw-light lh-1 "
+                                        style="font-size: 30px">up to %70</h5>
+                                    <h6 class="raleway18px fw-boldest text-white text-uppercase pb-3">best android tv
+                                        box</h6>
+                                    <a class="raleway11px rounded-pill text-white text-decoration-none px-3 py-2 text-uppercase fw-bold"
+                                       href="#"
+                                       style="background-color: #b8cd06">learn more</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div><!--slider end-->
 
-                    <div class="row px-4 pt-4 pb-5">
-                        <div class="d-flex">
-                            <div class="d-flex col-md-7"><h4 class="d-none d-md-block raleway18px text-uppercase pt-3 ps-4 pe-4">Sport gadgets</h4>
-                               <div class="d-flex"> <p class="d-none d-md-block questrial11px text-secondary text-uppercase lh-xl pt-1 pe-4">showing <span class="fw-bold text-black">15</span> of <span class="fw-bold text-black">2.358</span> results</p></div>
+                <!--Filter bar met gadgets categorie-->
+                <div class="row px-4 pt-4 pb-5">
+                    <div class="d-flex">
 
-                                <a href="#" class="text-decoration-none border rounded mt-2 ms-3 py-1 ps-2 active " style="width: 35px; height: 35px;">
-                                    <i class="bi bi-grid-3x3-gap-fill"></i>
-                                </a>
+                        <div class="d-flex col-md-7">
+                            <h4 class="d-none d-md-block raleway18px text-uppercase pt-3 ps-4 pe-4">Sport gadgets</h4>
+                            <div class="d-flex pt-3">
+                                <p class="d-none d-lg-block questrial11px text-secondary text-uppercase  pt-1 pe-4">
+                                    showing <span class="fw-bold text-black">15</span> of <span
+                                        class="fw-bold text-black">2.358</span> results</p>
+                            </div>
 
-                                <a href="#" class="text-decoration-none border rounded m-2 me-3 py-1 ps-2" style="width: 35px; height: 35px;">
-                                    <i class="fa-solid fa-list text-secondary"></i>
-                                </a></div>
-                            <div class="col-md-5 d-flex col-sm-12"> <div class="dropdown py-2 ps-4 pe-3">
-                                <a class="btn rounded-pill border dropdown-toggle text-secondary text-uppercase pe-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <!--weergave opties (grid of lijst)-->
+                            <a class="text-decoration-none border rounded mt-2 ms-3 py-1 ps-2 active " href="#"
+                               style="width: 35px; height: 35px;">
+                                <i class="bi bi-grid-3x3-gap-fill"></i>
+                            </a>
+                            <a class="text-decoration-none border rounded m-2 me-3 py-1 ps-2" href="#"
+                               style="width: 35px; height: 35px;">
+                                <i class="fa-solid fa-list text-secondary"></i>
+                            </a>
+                        </div><!--col-md-7-->
+
+                        <!--dropdown filters-->
+                        <div class="col-md-5 d-flex col-sm-12">
+
+                            <!--dropdown most popular products-->
+                            <div class="dropdown py-2 ps-4 pe-3">
+                                <a aria-expanded="false"
+                                   class="btn rounded-pill border dropdown-toggle text-secondary text-uppercase pe-3"
+                                   data-bs-toggle="dropdown" href="#" role="button">
                                     <span class="questrial11px lh-lg">Most Popular Products</span>
                                 </a>
-
                                 <ul class="dropdown-menu text-secondary">
                                     <li><a class="dropdown-item questrial11px" href="#">Volvo</a></li>
                                     <li><a class="dropdown-item questrial11px" href="#">Saab</a></li>
@@ -494,312 +898,361 @@
                                 </ul>
                             </div><!--dropdown most popular products-->
 
-                                <div class="dropdown p-2">
-                                    <a class="btn rounded-pill border dropdown-toggle text-secondary text-uppercase pe-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span class="questrial11px lh-lg">Show 30</span>
-                                    </a>
+                            <!--dropdown aantal tonen-->
+                            <div class="dropdown p-2">
+                                <a aria-expanded="false"
+                                   class="btn rounded-pill border dropdown-toggle text-secondary text-uppercase pe-3"
+                                   data-bs-toggle="dropdown" href="#" role="button">
+                                    <span class="questrial11px lh-lg">Show 30</span>
+                                </a>
+                                <ul class="dropdown-menu text-secondary">
+                                    <li><a class="dropdown-item questrial11px" href="#">30</a></li>
+                                    <li><a class="dropdown-item questrial11px" href="#">50</a></li>
+                                    <li><a class="dropdown-item questrial11px" href="#">100</a></li>
+                                    <li><a class="dropdown-item questrial11px" href="#">200</a></li>
+                                </ul>
+                            </div><!--dropdown show 30-->
 
-                                    <ul class="dropdown-menu text-secondary">
-                                        <li><a class="dropdown-item questrial11px" href="#">30</a></li>
-                                        <li><a class="dropdown-item questrial11px" href="#">50</a></li>
-                                        <li><a class="dropdown-item questrial11px" href="#">100</a></li>
-                                        <li><a class="dropdown-item questrial11px" href="#">200</a></li>
-                                    </ul>
-                                </div><!--dropdown show 30--></div>
+                        </div><!--col-md-5-->
+                    </div><!--d-flex-->
 
+                    <!-- Button to open the offcanvas (visible only on small screens) -->
+                    <button aria-controls="filtersOffcanvas" class="btn border active rounded-pill d-lg-none ms-5 my-3"
+                            data-bs-target="#filtersOffcanvas" data-bs-toggle="offcanvas"
+                            type="button">
+                        Filters
+                    </button>
 
+                </div><!--row-->
 
+                <div class="row ps-5 justify-content-center"><!--producten div row-->
 
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card border-0 border-end rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">ACCESSORIES</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">golfsense</a>
+                            <img alt="product1" class="card-img-top" src="images/product1.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$129.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
                         </div>
-                    </div><!--row px-4-->
+                    </div><!--card wrapper-->
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">SMART WATCHES</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">watch 42mm smartwatch</a>
+                            <img alt="product1" class="card-img-top" src="images/product2.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$225.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
+                        </div>
+                    </div><!--card wrapper-->
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card  border-0 rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">HEADPHONES</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">fitness headphones inspire</a>
+                            <img alt="product1" class="card-img-top" src="images/product3.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$110.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
+                        </div>
+                    </div><!--card wrapper-->
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">HEADPHONES</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">fitness headphones inspire</a>
+                            <img alt="product1" class="card-img-top" src="images/product4.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$115.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
+                        </div>
+                    </div><!--card wrapper-->
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">ACCESSORIES</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">groove water bottle</a>
+                            <img alt="product1" class="card-img-top" src="images/product5.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$45.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
+                        </div>
+                    </div><!--card wrapper-->
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card  border-0 rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">FITNESS TRACKER</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">flex fitness tracker</a>
+                            <img alt="product1" class="card-img-top" src="images/product6.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$55.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
+                        </div>
+                    </div><!--card wrapper-->
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">FITNESS TRACKER</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">tracker moov x</a>
+                            <img alt="product1" class="card-img-top" src="images/product7.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$63.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
+                        </div>
+                    </div><!--card wrapper-->
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">HEADPHONES</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">fitness headphones</a>
+                            <img alt="product1" class="card-img-top" src="images/product8.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$95.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
+                        </div>
+                    </div><!--card wrapper-->
+                    <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
+                        <div class="card  border-0  rounded-0" style="width: 18rem;">
+                            <a class="questrial11px colorgreen text-decoration-none" href="#">FITNESS TRACKER</a>
+                            <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder" href="#"
+                               style="font-size: 13px">smart bracelet</a>
+                            <img alt="product1" class="card-img-top" src="images/product9.png">
+                            <div class="card-body">
+                                <span class="questrial14px">$74.00</span>
+                                <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">
+                                    Mollis nec consequat at In feugiat
+                                    <br> mole stie tortor a malesuada</p>
+                            </div>
+                        </div>
+                    </div><!--card wrapper-->
 
-                    <div class="row ps-5 justify-content-center"><!--producten div row-->
+                    <!--navigatie knoppen-->
+                    <div class="row  mt-4 justify-content-center align-items-center">
+                        <!--previous page knop-->
+                        <div class="col-lg-2 col-12 ">
+                            <a class="btn border rounded-pill text-secondary text-uppercase raleway11px fw-bold px-3 py-2 "
+                               href="#">Prev
+                                page</a>
+                        </div>
+                        <!--pagina nummers-->
+                        <div class="col-lg-8 col-12 justify-content-center align-items-center ps-150">
+                            <a class="questrial11px text-white btn border border-rounded me-1 ms-4"
+                               href="#" style="background-color: #b8cd06">1</a>
+                            <a class="questrial11px text-secondary btn border border-rounded me-1" href="#">2</a>
+                            <a class="questrial11px text-secondary btn border border-rounded me-1" href="#">3</a>
+                            <a class="questrial11px text-secondary btn border border-rounded " href="#">4</a>
+                            <span class="mx-3 questrial11px text-secondary pt-2">...</span>
+                            <a class="questrial11px text-secondary btn border border-rounded " href="#">23</a>
+                        </div>
+                        <!--next page knop-->
+                        <div class="col-lg-2 col-12">
+                            <a class="btn border rounded-pill text-secondary text-uppercase raleway11px fw-bold px-3 py-2"
+                               href="#">next
+                                page</a>
+                        </div>
+                    </div><!--navigatie knoppen-->
 
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card border-0 border-end rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">ACCESSORIES</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">golfsense</a>
-                                <img src="images/product1.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$129.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">SMART WATCHES</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">watch 42mm smartwatch</a>
-                                <img src="images/product2.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$225.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card  border-0 rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">HEADPHONES</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">fitness headphones inspire</a>
-                                <img src="images/product3.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$110.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">HEADPHONES</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">fitness headphones inspire</a>
-                                <img src="images/product4.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$115.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">ACCESSORIES</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">groove water bottle</a>
-                                <img src="images/product5.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$45.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card  border-0 rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">FITNESS TRACKER</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">flex fitness tracker</a>
-                                <img src="images/product6.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$55.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">FITNESS TRACKER</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">tracker moov x</a>
-                                <img src="images/product7.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$63.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card  border-0 border-end rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">HEADPHONES</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">fitness headphones</a>
-                                <img src="images/product8.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$95.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-                        <div class="col-lg-4 col-md-6 col-12 pe-md-5 mb-5"><!--card wrapper-->
-                            <div class="card  border-0  rounded-0" style="width: 18rem;">
-                                <a href="#" class="questrial11px colorgreen text-decoration-none">FITNESS TRACKER</a>
-                                <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder" style="font-size: 13px">smart bracelet</a>
-                                <img src="images/product9.png" class="card-img-top" alt="product1">
-                                <div class="card-body">
-                                   <span class="questrial14px">$74.00</span>
-                                    <p class="card-text questrial text-secondary fw-light pt-3" style="font-size: 13px">Mollis nec consequat at In feugiat
-                                        <br> mole stie tortor a malesuada</p>
-                                </div>
-                            </div>
-                        </div><!--card wrapper-->
-
-                        <!--buttons (prev,pagina nummers,next)-->
-                        <div class="row  mt-4 justify-content-center align-items-center">
-                            <div class="col-lg-2 col-12 ">
-                                <a href="#" class="btn border rounded-pill text-secondary text-uppercase raleway11px fw-bold px-3 py-2 ">Prev page</a>
-                            </div>
-                            <div class="col-lg-8 col-12 justify-content-center align-items-center ps-150">
-                                <a href="#" class="questrial11px active btn border border-rounded me-1">1</a>
-                                <a href="#" class="questrial11px text-secondary btn border border-rounded me-1">2</a>
-                                <a href="#" class="questrial11px text-secondary btn border border-rounded me-1">3</a>
-                                <a href="#" class="questrial11px text-secondary btn border border-rounded ">4</a>
-                                <span class="mx-3 questrial11px text-secondary pt-2">...</span>
-                                <a href="#" class="questrial11px text-secondary btn border border-rounded ">23</a>
-                            </div>
-                            <div class="col-lg-2 col-12">
-                                <a href="#" class="btn border rounded-pill text-secondary text-uppercase raleway11px fw-bold px-3 py-2">next page</a>
-                            </div>
-                        </div><!--buttons (prev,pagina nummers,next)-->
-
-                    </div> <!--producten div row-->
-            </div><!--colmd9(producten)-->
+                </div> <!--producten div row-->
+            </div><!--col-md-9(producten)-->
         </div><!--producten en filters-->
     </div><!--row-->
 
     <div class="row mt-5 justify-content-center pt-5 mb-5 pt-5">
-
-        <div class="card col-lg-3 col-md-4 border-0" style="width: 18rem;">
+        <div class="card col-lg-3 col-md-4 border-0" style="width: 18rem;"><!--hot sale card-->
             <div class="card-body">
                 <h5 class="card-title raleway18px text-uppercase pb-3">HOT SALE</h5>
 
                 <!-- item 1 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/hotsale1.jpg" alt="hot sale1" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale1" class="border rounded" src="images/hotsale1.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Wireless</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">wireless headphones</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase"
+                           href="#">Wireless</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">wireless headphones</a><br>
                         <span class="questrial14px">$98.00</span>
                     </div>
                 </div>
 
                 <!-- item 2 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/hotsale2.jpg" alt="hot sale2" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale2" class="border rounded" src="images/hotsale2.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Cases</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">earphones case</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase" href="#">Cases</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">earphones case</a><br>
                         <span class="questrial14px">$12.00</span>
                     </div>
                 </div>
 
                 <!-- item 3 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/hotsale3.jpg" alt="hot sale3" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale3" class="border rounded" src="images/hotsale3.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Cases</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">headphones case</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase" href="#">Cases</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">headphones case</a><br>
                         <span class="questrial14px">$24.00</span>
                     </div>
                 </div>
-
             </div><!--card body-->
         </div><!--hot sale card-->
-        <div class="card col-lg-3 col-md-4 border-0" style="width: 18rem;">
+        <div class="card col-lg-3 col-md-4 border-0" style="width: 18rem;"><!--top rated card-->
             <div class="card-body">
                 <h5 class="card-title raleway18px text-uppercase pb-3">top rated</h5>
 
                 <!-- item 1 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/toprated1.jpg" alt="hot sale1" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale1" class="border rounded" src="images/toprated1.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Wireless</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">wireless headphones</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase"
+                           href="#">Wireless</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">wireless headphones</a><br>
                         <span class="questrial14px">$98.00</span>
                     </div>
                 </div>
 
                 <!-- item 2 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/toprated2.jpg" alt="hot sale2" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale2" class="border rounded" src="images/toprated2.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Cases</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">earphones case</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase" href="#">Cases</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">earphones case</a><br>
                         <span class="questrial14px">$12.00</span>
                     </div>
                 </div>
 
                 <!-- item 3 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/toprated3.jpg" alt="hot sale3" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale3" class="border rounded" src="images/toprated3.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Cases</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">headphones case</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase" href="#">Cases</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">headphones case</a><br>
                         <span class="questrial14px">$24.00</span>
                     </div>
                 </div>
 
             </div><!--card body-->
         </div><!--top rated card-->
-        <div class="card col-lg-3 col-md-4 border-0" style="width: 18rem;">
+        <div class="card col-lg-3 col-md-4 border-0" style="width: 18rem;"><!--popular card-->
             <div class="card-body">
                 <h5 class="card-title raleway18px text-uppercase pb-3">popular</h5>
 
                 <!-- item 1 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/popular1.jpg" alt="hot sale1" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale1" class="border rounded" src="images/popular1.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Wireless</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">wireless headphones</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase"
+                           href="#">Wireless</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">wireless headphones</a><br>
                         <span class="questrial14px">$98.00</span>
                     </div>
                 </div>
 
                 <!-- item 2 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/popular2.jpg" alt="hot sale2" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale2" class="border rounded" src="images/popular2.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Cases</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">earphones case</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase" href="#">Cases</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">earphones case</a><br>
                         <span class="questrial14px">$12.00</span>
                     </div>
                 </div>
 
                 <!-- item 3 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/popular3.jpg" alt="hot sale3" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale3" class="border rounded" src="images/popular3.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Cases</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">headphones case</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase" href="#">Cases</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">headphones case</a><br>
                         <span class="questrial14px">$24.00</span>
                     </div>
                 </div>
 
             </div><!--card body-->
         </div><!--popular card-->
-        <div class="card col-lg-3 col-md-4 border-0" style="width: 18rem;">
+        <div class="card col-lg-3 col-md-4 border-0" style="width: 18rem;"><!--best choice card-->
             <div class="card-body">
                 <h5 class="card-title raleway18px text-uppercase pb-3">best choice</h5>
 
                 <!-- item 1 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/bestchoice1.jpg" alt="hot sale1" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale1" class="border rounded" src="images/bestchoice1.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Wireless</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">wireless headphones</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase"
+                           href="#">Wireless</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">wireless headphones</a><br>
                         <span class="questrial14px">$98.00</span>
                     </div>
                 </div>
 
                 <!-- item 2 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/bestchoice2.jpg" alt="hot sale2" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale2" class="border rounded" src="images/bestchoice2.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Cases</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">earphones case</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase" href="#">Cases</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">earphones case</a><br>
                         <span class="questrial14px">$12.00</span>
                     </div>
                 </div>
 
                 <!-- item 3 -->
                 <div class="d-flex align-items-center pb-3">
-                    <img src="images/bestchoice3.jpg" alt="hot sale3" class="border rounded" style="max-width: 70px;">
+                    <img alt="hot sale3" class="border rounded" src="images/bestchoice3.jpg" style="max-width: 70px;">
                     <div class="ps-3">
-                        <a href="#" class="questrial11px colorgreen text-decoration-none text-uppercase">Cases</a><br>
-                        <a href="#" class="raleway text-uppercase text-decoration-none text-black links fw-bolder " style="font-size: 13px;">headphones case</a><br>
+                        <a class="questrial11px colorgreen text-decoration-none text-uppercase" href="#">Cases</a><br>
+                        <a class="raleway text-uppercase text-decoration-none text-black links fw-bolder " href="#"
+                           style="font-size: 13px;">headphones case</a><br>
                         <span class="questrial14px">$24.00</span>
                     </div>
                 </div>
 
             </div><!--card body-->
         </div><!--best choice card-->
-
     </div><!--row-->
+
 </div><!--container-->
 
 <!--dont miss your chance section-->
 <div class="container-fluid" style="background-color: #b8cd06">
     <div class="container">
+        <!-- Rij voor de inhoud van de sectie -->
         <div class="row justify-content-center py-5 ">
             <div class="col-lg-4 col-md-6">
                 <h5 class="text-white text-uppercase raleway fw-bolder fs-3 mt-2">don't miss your chance</h5>
@@ -807,11 +1260,16 @@
             <div class="col-lg-4 col-md-6 mt-3">
                 <span class="questrial14px text-white text-uppercase">only 200 promo codes on discount!</span>
             </div>
+            <!-- E-mail invoer en verzendknop -->
             <div class="col-lg-4 col-md-6">
                 <div class="d-flex position-relative">
                     <label for="yourEmail"></label>
-                    <input type="email" id="yourEmail" placeholder="Your email" class="border bg-transparent rounded-pill text-white p-3 ps-4 questrial14px flex-grow-1">
-                    <button class="rounded-pill bg-white text-secondary questrial14px text-uppercase border-0 p-3 px-3 position-absolute end-0 fw-bolder">
+                    <input class="border bg-transparent rounded-pill text-white p-3 ps-4 questrial14px flex-grow-1"
+                           id="yourEmail" placeholder="Your email"
+                           type="email">
+                    <button class="rounded-pill bg-white text-secondary questrial11px text-uppercase border position-absolute end-0 fw-bolder"
+                            style="padding: 18px 25px 19px 25px;" type="submit">
+                        <!--hier extra styling voor de submit button omdat bootstrap classes niet genoeg zijn!!-->
                         Submit
                     </button>
                 </div>
@@ -822,69 +1280,212 @@
 
 <!--footer-->
 <footer class="container-fluid" style="background-color: #343434">
-<div class="container">
-    <div class="row pt-5">
+    <div class="container">
+        <div class="row pt-5 justify-content-center">
 
-        <div class="card col-lg-3 col-md-4 border-0 bg-transparent" style="width: 18rem;">
-            <div class="card-body p-0">
-                <img src="images/logo.png" alt="logo" class="pb-3" style="filter: invert(100%) grayscale(100%) brightness(100%);">
-                <p class="questrial13px text-white-50 pb-2">Integer posuere orci sit amet feugiat pellent que. Suspendisse vel tempor justo, sit amet posuere orci dapibus auctor</p>
-                <div class="d-flex">
-                    <i class="fa-solid fa-mobile-screen-button" style="color: #b8cd06"></i>
-                    <p class="raleway9px text-white-50 text-uppercase ps-2">contact us: <span class="questrial10px links">+3(523) 555 123 8745</span> </p>
-                </div>
-                <div class="d-flex">
-                    <i class="fa-regular fa-envelope" style="color: #b8cd06"></i>
-                    <p class="raleway9px text-white-50 text-uppercase ps-2">email: <span class="questrial10px links">office@exzo.com</span> </p>
-                </div>
-                <div class="d-flex">
-                    <i class="fa-solid fa-location-dot" style="color: #b8cd06"></i>
-                    <p class="raleway9px text-white-50 text-uppercase ps-2">address: <span class="questrial10px links">1st, new york, usa</span> </p>
-                </div>
-            </div><!--card body-->
-        </div><!--card-->
+            <!-- Eerste kaart: Bedrijfsinformatie -->
+            <div class="card col-lg-3 col-md-4 border-0 rounded-0 bg-transparent" style="width: 18rem;">
+                <div class="card-body p-0">
+                    <img alt="logo" class="pb-3" src="images/logo.png"
+                         style="filter: invert(100%) grayscale(100%) brightness(100%);">
+                    <p class="questrial13px text-white-50 pb-2">Integer posuere orci sit amet feugiat pellent que.
+                        Suspendisse vel tempor justo, sit amet posuere orci dapibus auctor</p>
+                    <div class="d-flex">
+                        <i class="fa-solid fa-mobile-screen-button" style="color: #b8cd06"></i>
+                        <p class="raleway9px text-white-50 text-uppercase ps-2">contact us: <span
+                                class="questrial10px links">+3(523) 555 123 8745</span></p>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa-regular fa-envelope" style="color: #b8cd06"></i>
+                        <p class="raleway9px text-white-50 text-uppercase ps-2">email: <span
+                                class="questrial10px links">office@exzo.com</span></p>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa-solid fa-location-dot" style="color: #b8cd06"></i>
+                        <p class="raleway9px text-white-50 text-uppercase ps-2">address: <span
+                                class="questrial10px links">1st, new york, usa</span></p>
+                    </div>
+                </div><!--card body-->
+            </div><!--card1-->
 
-        <div class="card col-lg-3 col-md-4 border-0 bg-transparent" style="width: 18rem;">
-            <div class="card-body p-0">
-                <h5 class="card-title raleway13px text-uppercase pb-3 text-white">top rated</h5>
-               <div class="d-flex col-lg-6 col-6">
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">home</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">about us</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">products</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">services</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">blog</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">gallery</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">contact</a>
-               </div>
-                <div class="d-flex col-lg-6 col-6">
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">privacy policy</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">warranty</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">login</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">registration</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">delivery</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">pages</a>
-                   <a href="#" class="text-uppercase text-white-50 text-decoration-none questrial11px links">our stores</a>
-               </div>
-            </div><!--card body-->
-        </div><!--card-->
+            <!-- Tweede kaart: Snelle links -->
+            <div class="card col-lg-3 col-md-4 border-0 rounded-0 bg-transparent" style="width: 18rem;">
+                <div class="card-body p-0">
+                    <h5 class="card-title raleway13px text-uppercase pb-3 text-white">quick links</h5>
+                    <div class="col-12 d-flex flex-wrap">
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12 col-lg-6 pb-3"
+                           href="#">home</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12 col-lg-6 pb-3"
+                           href="#">privacy
+                            policy</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">about
+                            us</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">warranty</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">products</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">login</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">services</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">registration</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">blog</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">delivery</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">gallery</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">pages</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">contact</a>
+                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
+                           href="#">our
+                            stores</a>
+                    </div>
+                </div><!--card body-->
+            </div><!--card2-->
 
-    </div><!--row-->
-</div><!--container-->
+            <!-- Derde kaart: Blogberichten -->
+            <div class="card col-lg-3 col-md-4 border-0 rounded-0 bg-transparent" style="width: 18rem;">
+                <div class="card-body p-0">
+                    <h5 class="card-title raleway13px text-uppercase pb-3 text-white">some posts</h5>
+                    <div class="d-flex pb-3">
+                        <img alt="post 1" class="rounded me-2" src="images/post1.png">
+                        <div class="lh-1">
+                            <span class="questrial10px text-white-50 text-uppercase">apr 07/15</span><br>
+                            <a class="raleway11px links text-white text-uppercase text-decoration-none fw-bolder "
+                               href="#">fusce
+                                tincidunt accumsan pretium sit amet</a>
+                        </div>
+                    </div>
+                    <div class="d-flex pb-3">
+                        <img alt="post 1" class="rounded me-2" src="images/post2.png">
+                        <div class="lh-1">
+                            <span class="questrial10px text-white-50 text-uppercase">apr 07/15</span><br>
+                            <a class="raleway11px links text-white text-uppercase text-decoration-none fw-bolder "
+                               href="#">fusce
+                                tincidunt accumsan pretium sit amet</a>
+                        </div>
+                    </div>
+                    <div class="d-flex pb-3">
+                        <img alt="post 1" class="rounded me-2" src="images/post3.png">
+                        <div class="lh-1">
+                            <span class="questrial10px text-white-50 text-uppercase">apr 07/15</span><br>
+                            <a class="raleway11px links text-white text-uppercase text-decoration-none fw-bolder "
+                               href="#">fusce
+                                tincidunt accumsan pretium sit amet</a>
+                        </div>
+                    </div>
+                </div><!--card body-->
+            </div><!--card3-->
+
+            <!-- Vierde kaart: Populaire tags -->
+            <div class="card col-lg-3 col-md-4 border-0 rounded-0 bg-transparent" style="width: 18rem;">
+                <div class="card-body p-0">
+                    <h5 class="card-title raleway13px text-uppercase pb-3 text-white">popular tags</h5>
+                    <div class="col-12 d-flex flex-wrap">
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active tags p-2">HEADPHONES</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active tags p-2">ACCESSORIES</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">NEW</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">WIRELESS</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">CABLES</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">DEVICES</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active tags p-2">GADGETS</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">BRANDS</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">REPLACEMENTS</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">CASES</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">CABLES</a>
+                        </div>
+                        <div class="col-lg-4 col-md-3s col-6 mb-2">
+                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">PROFESSIONAL</a>
+                        </div>
+                    </div>
+                </div><!--card body-->
+            </div><!--card4-->
+            <hr class="text-white-50 m-5"><!--border bottom-->
+        </div><!--row-->
+
+        <!-- Rij 2: Onderste informatie -->
+        <div class="row pb-4">
+            <!-- Copyright -->
+            <div class="col-lg-4 col-md-6">
+                <p class="questrial13px text-white-50">© 2015 All rights reserved. Development by <a
+                        class="colorgreen text-decoration-none"
+                        href="#">UnionAgency</a>
+                </p>
+            </div>
+            <!-- Sociale media links -->
+            <div class="col-lg-4 col-md-6 d-flex gap-2">
+                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
+                   href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
+                   href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
+                   href="#">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
+                   href="#">
+                    <i class="fa-brands fa-google-plus-g"></i>
+                </a>
+                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
+                   href="#">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+            </div>
+            <!-- Betaalmogelijkheden -->
+            <div class="col-lg-4 col-md-6 ps-5">
+                <a class="pe-1" href="#"><img alt="payment-1" src="images/payment1.jpg"></a>
+                <a class="pe-1" href="#"><img alt="payment-2" src="images/payment2.jpg"></a>
+                <a class="pe-1" href="#"><img alt="payment-3" src="images/payment3.jpg"></a>
+                <a class="pe-1" href="#"><img alt="payment-4" src="images/payment4.jpg"></a>
+                <a class="pe-1" href="#"><img alt="payment-5" src="images/payment5.jpg"></a>
+                <a class="" href="#"><img alt="payment-6" src="images/payment6.jpg"></a>
+            </div>
+        </div>
+
+    </div><!--container-->
 </footer><!--footer-->
 
-
-
 <!--modal voor search icoontje-->
-<div class="modal fade w-100" id="exampleModal" tabindex="-1" aria-hidden="true">
+<div aria-hidden="true" class="modal fade w-100" id="exampleModal" tabindex="-1">
     <div class="modal-dialog modal-xl d-flex justify-content-center align-items-center vh-100">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Search product</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <form>
-                    <input type="text" class="form-control" placeholder="Search...">
+                    <input class="form-control" placeholder="Search..." type="text">
                 </form>
             </div>
 
@@ -892,17 +1493,25 @@
     </div>
 </div>
 
-
 <script>
-    <!--script tag voor price ophalen-->
-    document.getElementById('priceRange').addEventListener('input',function (){
-        document.getElementById('rangeValue').textContent="Price: €" +this.value;
+    /*script tag voor price ophalen*/
+    document.getElementById('priceRange').addEventListener('input', function () {
+        document.getElementById('rangeValue').textContent = "Price: $40-" + this.value;
     });
 
-
+    /*script tag voor price ophalen(offcanvas)*/
+    document.getElementById('priceRangeOC').addEventListener('input', function () {
+        document.getElementById('rangeValueOC').textContent = "Price: $40-" + this.value;
+    });
 </script>
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script><!--bootstrap script-->
+<script crossorigin="anonymous"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--bootstrap script-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><!--animatie aos-->
+<script>
+    AOS.init();
+</script><!--animatie aos tweede script-->
 </body>
 </html>

@@ -22,7 +22,6 @@
     font-size: 9px;
     font-weight: 700;
 }
-
 .questrial{
     font-family: "Questrial",sans-serif;
     font-weight: 700;
@@ -47,15 +46,10 @@
     font-size: 13px;
     font-weight: 400;
 }
-
-
-
-
 /*text color*/
 .colorgreen{
     color: #b8cd06;
 }
-
 /*padding-margin*/
 .pe-140{
     padding-right: 140px;
@@ -63,6 +57,10 @@
 .ps-150{
     padding-left: 150px !important;
 }
+.lh-xl{
+    line-height: 50px;
+}
+
 
 /*header-nav*/
 header{
@@ -80,12 +78,11 @@ header a:hover{
     border-radius: 50px;
     color: white !important;
 }
-/*line height voor header*/
-.lh-xl{
-    line-height: 50px;
+.active:hover{
+    background: #b8cd06 !important;
+    border-radius: 50px;
+    color: white !important;
 }
-
-
 
 
 /*choose color boxes*/
@@ -114,15 +111,26 @@ header a:hover{
 /*inputvelden styling*/
 /* range thumb kleur */
 input[type="range"]::-webkit-slider-thumb {
-    background: #b8cd06;
+    background: #b8cd06!important;
 }
 /* email placeholderkleur */
 input::placeholder {
     color: white;
 }
+/*checkbox kleur*/
+.form-check-input:checked {
+    background-color: #b8cd06!important;
+    border-color: #b8cd06!important;
+}
 
-
-
+/*footer*/
+.socials{
+    width: 30px;
+    height: 30px;
+}
+.socials:hover{
+    background-color: #b8cd06!important;
+}
 
 /*op kleinere schermen margins wegdoen*/
 @media (max-width: 767px) {
@@ -131,5 +139,3 @@ input::placeholder {
     }
 
 }
-
-
