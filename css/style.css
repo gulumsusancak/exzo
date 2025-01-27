@@ -22,6 +22,11 @@
     font-size: 9px;
     font-weight: 700;
 }
+.raleway40px{
+    font-family: "Raleway",sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+}
 .questrial{
     font-family: "Questrial",sans-serif;
     font-weight: 700;
@@ -46,6 +51,11 @@
     font-size: 13px;
     font-weight: 400;
 }
+.questrial30px{
+    font-family: "Questrial",sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
 /*text color*/
 .colorgreen{
     color: #b8cd06;
@@ -59,6 +69,9 @@
 }
 .lh-xl{
     line-height: 50px;
+}
+.lh-3{
+    line-height: 3;
 }
 
 
@@ -83,15 +96,19 @@ header a:hover{
     border-radius: 50px;
     color: white !important;
 }
+.nav-item.active{
+    background: #b8cd06 !important;
+    border-radius: 50px;
+    color: white !important;
+}
 
-
+/*index.html*/
 /*choose color boxes*/
 .color-box {
     width: 16px;
     height: 16px;
     cursor: pointer;
 }
-
 /*tags classes*/
 .tags{
     background-color: #eeeeee;
@@ -101,13 +118,10 @@ header a:hover{
     color: white !important;
     cursor: pointer;
 }
-
 /*links classes*/
 .links:hover{
     color: #b8cd06 !important;
 }
-
-
 /*inputvelden styling*/
 /* range thumb kleur */
 input[type="range"]::-webkit-slider-thumb {
@@ -122,6 +136,101 @@ input::placeholder {
     background-color: #b8cd06!important;
     border-color: #b8cd06!important;
 }
+
+
+
+/*blog.html*/
+
+/* overlay standaard styling */
+.overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.custom-hover-color {
+    background-color: rgba(184, 205, 6, 0.75); /* #b8cd06 met transparantie */
+}
+.position-relative:hover .overlay {
+    opacity: 1;
+}
+.plusIcon{
+    transition: transform 0.3s ease; /* draai-transitie */
+}
+.position-relative:hover .plusIcon {
+    transform: rotate(180deg);
+}
+
+/*button styling & hover effect*/
+.learnmorebtn {
+    background-color: #b8cd06;
+    color: white;
+    overflow: hidden; /* Voorkomt dat animaties buiten de knop vallen */
+    position: relative; /* Zorgt dat de kinderen gepositioneerd kunnen worden */
+    text-align: center;
+    transition: background-color 0.3s ease; /* Voor een achtergrondkleur overgang */
+}
+.learnmorebtn .text {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+.learnmorebtn .icon {
+    display: inline-block;
+    position: absolute;
+    top: 50%; /* Centraal positioneren */
+    left: -50px; /* Begin buiten de knop aan de linkerkant */
+    transform: translateY(-50%); /* Houd het icoon verticaal gecentreerd */
+    opacity: 0; /* Begin als onzichtbaar */
+    transition: all 0.4s ease; /* Smooth animatie */
+    font-size: 1.2rem; /* Pas grootte van het icoon aan */
+    color: white;
+}
+.learnmorebtn:hover .text {
+    left: -50px; /* Schuif de tekst naar links buiten de knop */
+    opacity: 0;
+}
+.learnmorebtn:hover .icon {
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+
+.play-icon {
+    background-color: #b8cd06;
+    width: 55px;
+    height: 55px;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2); /* de border effect */
+    transition: box-shadow 0.3s ease;
+}
+.play-icon:hover {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+.fa-play {
+    margin-left: 3px;
+}
+.carousel-item.active {
+    background-color: white!important; /* Vervang met de gewenste kleur */
+}
+/* Standaard gedrag: icoon gecentreerd */
+.play-icon-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+/* voor middelscherm : icoon naar linksboven */
+@media (max-width: 991px) {
+    .play-icon-container {
+        top: 50px; /* Naar boven */
+        left: 120px; /* Naar links */
+        transform: none; /* Geen transformatie meer */
+    }
+}
+
+
+
+
+
+
 
 /*footer*/
 .socials{

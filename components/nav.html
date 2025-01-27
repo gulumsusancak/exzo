@@ -1,0 +1,182 @@
+<!--begin nav-->
+<nav class="navbar navbar-expand-lg questrial11px fw-bold border-bottom px-5 bg-white ">
+    <div class="container-fluid">
+        <!-- logo -->
+        <a class="navbar-brand" href="index.html">
+            <img alt="logo" src="../images/logo.png">
+        </a>
+
+        <!-- toggler knop voor offcanvas menu (voor kleinere schermen)-->
+        <button aria-controls="offcanvasMenu" class="navbar-toggler" data-bs-target="#offcanvasMenu"
+                data-bs-toggle="offcanvas"
+                type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- offcanvas menu (zichtbaar op kleinere schermen)-->
+        <div aria-labelledby="offcanvasMenuLabel" class="offcanvas offcanvas-end d-lg-none" id="offcanvasMenu"
+             tabindex="-1">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+                <!--sluit knop-->
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!--items in offcanvas menu-->
+                <ul class="navbar-nav ms-auto">
+                    <!--menu item met dropdown-->
+                    <li class="nav-item dropdown ">
+                        <a aria-expanded="false" class="nav-link text-uppercase rounded-pill px-2"
+                           data-bs-toggle="dropdown" data-page="index.html"
+                           href="index.html" role="button">
+                            Home <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
+                        </a>
+                        <!--dropdown-->
+                        <ul class="dropdown-menu rounded-0 rounded-bottom">
+                            <li><a class="dropdown-item text-uppercase" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="index.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <!--menu item-->
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">About us</a>
+                    </li>
+                    <!--menu item met dropdown-->
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
+                           data-bs-toggle="dropdown" href="#"
+                           role="button">
+                            Products <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
+                        </a>
+                        <!--dropdown-->
+                        <ul class="dropdown-menu rounded-0 rounded-bottom">
+                            <li><a class="dropdown-item" href="#">Services</a></li>
+                            <li><a class="dropdown-item" href="#">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    <!--menu item-->
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Services</a>
+                    </li>
+                    <!--menu item met dropdown-->
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
+                           data-bs-toggle="dropdown" href="blog.html"
+                           role="button" data-page="blog.html">
+                            Blog <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
+                        </a>
+                        <!--dropdown-->
+                        <ul class="dropdown-menu rounded-0 rounded-bottom">
+                            <li><a class="dropdown-item" href="blog.html">Blog page</a></li>
+                            <li><a class="dropdown-item" href="blog.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <!--menu item met dropdown-->
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
+                           data-bs-toggle="dropdown" href="#"
+                           role="button">
+                            Gallery <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
+                        </a>
+                        <!--dropdown-->
+                        <ul class="dropdown-menu rounded-0 rounded-bottom">
+                            <li><a class="dropdown-item" href="#">Gallery 1</a></li>
+                            <li><a class="dropdown-item" href="#">Gallery 2</a></li>
+                        </ul>
+                    </li>
+                    <!--menu item-->
+                    <li class="nav-item rounded-pill">
+                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Pages</a>
+                    </li>
+                    <!--menu item-->
+                    <li class="nav-item rounded-pill">
+                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- menu voor grote schermen -->
+        <div class="collapse navbar-collapse d-none d-lg-block"  id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <!-- dropdown item home-->
+                <li class="nav-item dropdown px-2">
+                    <a aria-expanded="false"
+                       class="nav-link text-uppercase rounded-pill "
+                       data-bs-toggle="dropdown"
+                       href="index.html" role="button"
+                       data-page="index.html">
+                        Home
+                    </a>
+                    <!--dropdown-->
+                    <ul class="dropdown-menu rounded-0 rounded-bottom">
+                        <li><a class="dropdown-item text-uppercase" href="index.html">Home 1</a></li>
+                        <li><a class="dropdown-item text-uppercase" href="index.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <!--menu item-->
+                <li class="nav-item px-2">
+                    <a class="nav-link rounded-pill text-uppercase" href="#">About us</a>
+                </li>
+                <!--dropdown item products-->
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase" data-bs-toggle="dropdown"
+                       href="#"
+                       role="button">
+                        Products
+                    </a>
+                    <!--dropdown-->
+                    <ul class="dropdown-menu rounded-0 rounded-bottom">
+                        <li><a class="dropdown-item" href="#">Services</a></li>
+                        <li><a class="dropdown-item" href="#">Testimonials</a></li>
+                    </ul>
+                </li>
+                <!--menu item-->
+                <li class="nav-item px-2">
+                    <a class="nav-link rounded-pill text-uppercase" href="#">Services</a>
+                </li>
+                <!--dropdown item blog-->
+                <li class="nav-item dropdown px-2">
+                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase"
+                       data-bs-toggle="dropdown"
+                       href="blog.html"
+                       role="button"
+                       data-page="blog.html">
+                        Blog
+                    </a>
+                    <!--dropdown-->
+                    <ul class="dropdown-menu rounded-0 rounded-bottom">
+                        <li><a class="dropdown-item" href="blog.html">Blog page</a></li>
+                        <li><a class="dropdown-item" href="blog.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <!--dropdown item gallery-->
+                <li class="nav-item dropdown px-2">
+                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase" data-bs-toggle="dropdown"
+                       href="#"
+                       role="button">
+                        Gallery
+                    </a>
+                    <!--dropdown -->
+                    <ul class="dropdown-menu rounded-0 rounded-bottom">
+                        <li><a class="dropdown-item" href="#">Gallery 1</a></li>
+                        <li><a class="dropdown-item" href="#">Gallery 2</a></li>
+                    </ul>
+                </li>
+                <!--menu item-->
+                <li class="nav-item rounded-pill px-2">
+                    <a class="nav-link rounded-pill text-uppercase" href="#">Pages</a>
+                </li>
+                <!--menu item-->
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill text-uppercase" href="#">Contact</a>
+                </li>
+            </ul>
+            <!--zoek knop met modal-->
+            <p class="search-icon m-0 mx-lg-5" data-bs-target="#exampleModal" data-bs-toggle="modal">
+                <i class="bi bi-search fs-5"></i>
+            </p>
+        </div>
+
+    </div>
+</nav>

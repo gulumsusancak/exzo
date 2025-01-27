@@ -18,253 +18,43 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!--font awesome icons-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!--animatie met aos-->
-
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>EX ZO</title>
 </head>
-<body>
-<header class="container-fluid text-secondary">
-    <!--header top-->
-    <div class="px-5 row border-bottom lh-xl" data-aos="fade-down">
-        <!--contact section getoond op grotere schermen alleen-->
-        <div class="row align-items-center d-none d-xl-flex" id="header-contact">
-            <!-- contact info -->
-            <div class="col-md-4 d-flex align-items-center flex-wrap">
-                <div class="border-end border-start px-3">
-                    <span class="fw-bold pe-1 raleway">CONTACT US:</span>
-                    <a class="text-decoration-none text-secondary questrial fw-light rounded" href="#">+3 (523) 555 123
-                        8745</a>
-                </div>
-                <div class="border-end px-3">
-                    <span class="fw-bold pe-1 raleway">EMAIL:</span>
-                    <a class="text-decoration-none text-secondary questrial fw-light" href="#">OFFICE@EXZO.COM</a>
-                </div>
-            </div>
+<body x-data="{
+                header: '',
+        footer: '',
+        async loadComponents() {
+            this.header = await (await fetch('components/header.html')).text();
+            this.nav = await (await fetch('components/nav.html')).text();
+            this.footer = await (await fetch('components/footer.html')).text();
+            this.$nextTick(() => { // Wacht tot DOM volledig is bijgewerkt
+                this.markActiveLink();
+            });
+        },
+        markActiveLink() {
+            const currentPath = window.location.pathname.split('/').pop(); // Huidige pagina
+            const navLinks = document.querySelectorAll('a[data-page]'); // Selecteer links met data-page
 
-            <!-- login-taal-winkelwagen -->
-            <div class="col-md-8 d-flex justify-content-end align-items-center">
-                <!--login or register links met hover-->
-                <div class="d-flex align-items-center border-start border-end px-4">
-                    <a class="text-decoration-none text-secondary raleway text-uppercase" href="#">Login</a>
-                    <span class="ps-1 questrial fw-light">OR</span>
-                    <a class="ps-1 text-decoration-none text-secondary raleway text-uppercase" href="#">Register</a>
-                </div>
-                <!--language dropdown menu-->
-                <div class="dropdown d-sm-flex d-none px-4 border-end">
-                    <a aria-expanded="false" class="dropdown-toggle text-decoration-none text-secondary fw-bold"
-                       data-bs-toggle="dropdown" id="languageDropdown" role="button">
-                        EN
-                    </a>
-                    <!--language options-->
-                    <ul aria-labelledby="languageDropdown" class="dropdown-menu rounded-0 rounded-bottom">
-                        <li><a class="dropdown-item" href="#">EN</a></li>
-                        <li><a class="dropdown-item" href="#">NL</a></li>
-                    </ul>
-                </div>
-                <!--heart icoon-->
-                <div class="border-end px-4">
-                    <a class="text-dark" href="#"><i class="bi bi-heart fs-6"></i></a>
-                </div>
-                <!--cart section-->
-                <div class="d-flex align-items-center border-end">
-                    <a class="text-decoration-none text-secondary position-relative" href="#">
-                        <span class="px-2 raleway text-uppercase">Your Bag</span>
-                        <i class="bi bi-bag-fill pe-2 fs-6"></i>
-                        <!-- badge voor het icoon -->
-                        <span class="badge position-absolute top-0 start-100 translate-middle mt-3 me-3"
-                              style="background-color: #b8cd06">5</span>
-                    </a>
-                    <span class="px-3 questrial colorgreen">€1195.00</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+            navLinks.forEach(link => {
+                link.classList.remove('active'); // Verwijder actieve klasse van alle links
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active'); // Voeg actieve klasse toe aan de juiste link
+                }
+            });
+        }
+}" x-init="loadComponents()">
 
-<!--begin nav-->
-<nav class="navbar navbar-expand-lg questrial11px fw-bold border-bottom px-5 sticky-top bg-white">
-    <div class="container-fluid">
-        <!-- logo -->
-        <a class="navbar-brand" href="#">
-            <img alt="logo" data-aos="fade-right" src="./images/logo.png">
-        </a>
+<div x-html="header"></div>
+<div x-html="nav" class="sticky-top"></div>
 
-        <!-- toggler knop voor offcanvas menu (voor kleinere schermen)-->
-        <button aria-controls="offcanvasMenu" class="navbar-toggler" data-bs-target="#offcanvasMenu"
-                data-bs-toggle="offcanvas"
-                type="button">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- offcanvas menu (zichtbaar op kleinere schermen)-->
-        <div aria-labelledby="offcanvasMenuLabel" class="offcanvas offcanvas-end d-lg-none" id="offcanvasMenu"
-             tabindex="-1">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
-                <!--sluit knop-->
-                <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
-            </div>
-            <div class="offcanvas-body">
-                <!--items in offcanvas menu-->
-                <ul class="navbar-nav ms-auto">
-                    <!--menu item met dropdown-->
-                    <li class="nav-item dropdown ">
-                        <a aria-expanded="false" class="nav-link text-uppercase rounded-pill active px-2"
-                           data-bs-toggle="dropdown"
-                           href="#" role="button">
-                            Home <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
-                        </a>
-                        <!--dropdown-->
-                        <ul class="dropdown-menu rounded-0 rounded-bottom">
-                            <li><a class="dropdown-item text-uppercase" href="#">Home 1</a></li>
-                            <li><a class="dropdown-item text-uppercase" href="#">Home 2</a></li>
-                        </ul>
-                    </li>
-                    <!--menu item-->
-                    <li class="nav-item">
-                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">About us</a>
-                    </li>
-                    <!--menu item met dropdown-->
-                    <li class="nav-item dropdown">
-                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
-                           data-bs-toggle="dropdown" href="#"
-                           role="button">
-                            Products <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
-                        </a>
-                        <!--dropdown-->
-                        <ul class="dropdown-menu rounded-0 rounded-bottom">
-                            <li><a class="dropdown-item" href="#">Services</a></li>
-                            <li><a class="dropdown-item" href="#">Testimonials</a></li>
-                        </ul>
-                    </li>
-                    <!--menu item-->
-                    <li class="nav-item">
-                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Services</a>
-                    </li>
-                    <!--menu item met dropdown-->
-                    <li class="nav-item dropdown">
-                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
-                           data-bs-toggle="dropdown" href="#"
-                           role="button">
-                            Blog <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
-                        </a>
-                        <!--dropdown-->
-                        <ul class="dropdown-menu rounded-0 rounded-bottom">
-                            <li><a class="dropdown-item" href="#">Blog page</a></li>
-                            <li><a class="dropdown-item" href="#">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <!--menu item met dropdown-->
-                    <li class="nav-item dropdown">
-                        <a aria-expanded="false" class="nav-link rounded-pill text-uppercase px-2"
-                           data-bs-toggle="dropdown" href="#"
-                           role="button">
-                            Gallery <span style="float: right;"><i class="bi bi-plus-lg"></i></span>
-                        </a>
-                        <!--dropdown-->
-                        <ul class="dropdown-menu rounded-0 rounded-bottom">
-                            <li><a class="dropdown-item" href="#">Gallery 1</a></li>
-                            <li><a class="dropdown-item" href="#">Gallery 2</a></li>
-                        </ul>
-                    </li>
-                    <!--menu item-->
-                    <li class="nav-item rounded-pill">
-                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Pages</a>
-                    </li>
-                    <!--menu item-->
-                    <li class="nav-item rounded-pill">
-                        <a class="nav-link rounded-pill text-uppercase px-2" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- menu voor grote schermen -->
-        <div class="collapse navbar-collapse d-none d-lg-block" data-aos="fade-left" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-                <!-- dropdown item home-->
-                <li class="nav-item dropdown px-2 active">
-                    <a aria-expanded="false" class="nav-link text-uppercase rounded-pill active"
-                       data-bs-toggle="dropdown"
-                       href="#" role="button">
-                        Home
-                    </a>
-                    <!--dropdown-->
-                    <ul class="dropdown-menu rounded-0 rounded-bottom">
-                        <li><a class="dropdown-item text-uppercase" href="#">Home 1</a></li>
-                        <li><a class="dropdown-item text-uppercase" href="#">Home 2</a></li>
-                    </ul>
-                </li>
-                <!--menu item-->
-                <li class="nav-item px-2">
-                    <a class="nav-link rounded-pill text-uppercase" href="#">About us</a>
-                </li>
-                <!--dropdown item products-->
-                <li class="nav-item dropdown">
-                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase" data-bs-toggle="dropdown"
-                       href="#"
-                       role="button">
-                        Products
-                    </a>
-                    <!--dropdown-->
-                    <ul class="dropdown-menu rounded-0 rounded-bottom">
-                        <li><a class="dropdown-item" href="#">Services</a></li>
-                        <li><a class="dropdown-item" href="#">Testimonials</a></li>
-                    </ul>
-                </li>
-                <!--menu item-->
-                <li class="nav-item px-2">
-                    <a class="nav-link rounded-pill text-uppercase" href="#">Services</a>
-                </li>
-                <!--dropdown item blog-->
-                <li class="nav-item dropdown px-2">
-                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase" data-bs-toggle="dropdown"
-                       href="#"
-                       role="button">
-                        Blog
-                    </a>
-                    <!--dropdown-->
-                    <ul class="dropdown-menu rounded-0 rounded-bottom">
-                        <li><a class="dropdown-item" href="#">Blog page</a></li>
-                        <li><a class="dropdown-item" href="#">Blog Details</a></li>
-                    </ul>
-                </li>
-                <!--dropdown item gallery-->
-                <li class="nav-item dropdown px-2">
-                    <a aria-expanded="false" class="nav-link rounded-pill text-uppercase" data-bs-toggle="dropdown"
-                       href="#"
-                       role="button">
-                        Gallery
-                    </a>
-                    <!--dropdown -->
-                    <ul class="dropdown-menu rounded-0 rounded-bottom">
-                        <li><a class="dropdown-item" href="#">Gallery 1</a></li>
-                        <li><a class="dropdown-item" href="#">Gallery 2</a></li>
-                    </ul>
-                </li>
-                <!--menu item-->
-                <li class="nav-item rounded-pill px-2">
-                    <a class="nav-link rounded-pill text-uppercase" href="#">Pages</a>
-                </li>
-                <!--menu item-->
-                <li class="nav-item">
-                    <a class="nav-link rounded-pill text-uppercase" href="#">Contact</a>
-                </li>
-            </ul>
-            <!--zoek knop met modal-->
-            <p class="search-icon m-0 mx-lg-5" data-bs-target="#exampleModal" data-bs-toggle="modal">
-                <i class="bi bi-search fs-5"></i>
-            </p>
-        </div>
-
-    </div>
-</nav>
 
 <div class="container">
 
     <div class="row mb-5">
         <!--links met pijl icoon-->
         <div class="d-flex py-4 questrial11px text-secondary">
-            <a class="px-2 text-decoration-none text-secondary links" href="#">HOME</a><i
+            <a class="px-2 text-decoration-none text-secondary links" href="index.html">HOME</a><i
                 class="fa-solid fa-angle-right align-items-end lh-sm"></i>
             <a class="px-2 text-decoration-none text-secondary links" href="#">ACCESSORIES</a><i
                 class="fa-solid fa-angle-right align-items-end lh-sm"></i>
@@ -1342,202 +1132,7 @@
 </div><!--container-fluid(dont miss your chance)-->
 
 <!--footer-->
-<footer class="container-fluid" style="background-color: #343434">
-    <div class="container">
-
-        <div class="row pt-5 justify-content-center">
-
-            <!-- Eerste kaart: Bedrijfsinformatie -->
-            <div class="card col-lg-3 col-md-4 border-0 rounded-0 bg-transparent" style="width: 18rem;">
-                <div class="card-body p-0">
-                    <img alt="logo" class="pb-3" src="images/logo.png"
-                         style="filter: invert(100%) grayscale(100%) brightness(100%);">
-                    <p class="questrial13px text-white-50 pb-2">Integer posuere orci sit amet feugiat pellent que.
-                        Suspendisse vel tempor justo, sit amet posuere orci dapibus auctor</p>
-                    <div class="d-flex">
-                        <i class="fa-solid fa-mobile-screen-button" style="color: #b8cd06"></i>
-                        <p class="raleway9px text-white-50 text-uppercase ps-2">contact us: <span
-                                class="questrial10px links">+3(523) 555 123 8745</span></p>
-                    </div>
-                    <div class="d-flex">
-                        <i class="fa-regular fa-envelope" style="color: #b8cd06"></i>
-                        <p class="raleway9px text-white-50 text-uppercase ps-2">email: <span
-                                class="questrial10px links">office@exzo.com</span></p>
-                    </div>
-                    <div class="d-flex">
-                        <i class="fa-solid fa-location-dot" style="color: #b8cd06"></i>
-                        <p class="raleway9px text-white-50 text-uppercase ps-2">address: <span
-                                class="questrial10px links">1st, new york, usa</span></p>
-                    </div>
-                </div><!--card body-->
-            </div><!--card1-->
-
-            <!-- Tweede kaart: Snelle links -->
-            <div class="card col-lg-3 col-md-4 border-0 rounded-0 bg-transparent" style="width: 18rem;">
-                <div class="card-body p-0">
-                    <h5 class="card-title raleway13px text-uppercase pb-3 text-white">quick links</h5>
-                    <div class="col-12 d-flex flex-wrap">
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12 col-lg-6 pb-3"
-                           href="#">home</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12 col-lg-6 pb-3"
-                           href="#">privacy
-                            policy</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">about
-                            us</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">warranty</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">products</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">login</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">services</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">registration</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">blog</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">delivery</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">gallery</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">pages</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">contact</a>
-                        <a class="text-uppercase text-white-50 text-decoration-none questrial11px links col-12  col-lg-6 pb-3"
-                           href="#">our
-                            stores</a>
-                    </div>
-                </div><!--card body-->
-            </div><!--card2-->
-
-            <!-- Derde kaart: Blogberichten -->
-            <div class="card col-lg-3 col-md-4 border-0 rounded-0 bg-transparent" style="width: 18rem;">
-                <div class="card-body p-0">
-                    <h5 class="card-title raleway13px text-uppercase pb-3 text-white">some posts</h5>
-                    <div class="d-flex pb-3">
-                        <img alt="post 1" class="rounded me-2" src="images/post1.png">
-                        <div class="lh-1">
-                            <span class="questrial10px text-white-50 text-uppercase">apr 07/15</span><br>
-                            <a class="raleway11px links text-white text-uppercase text-decoration-none fw-bolder "
-                               href="#">fusce
-                                tincidunt accumsan pretium sit amet</a>
-                        </div>
-                    </div>
-                    <div class="d-flex pb-3">
-                        <img alt="post 1" class="rounded me-2" src="images/post2.png">
-                        <div class="lh-1">
-                            <span class="questrial10px text-white-50 text-uppercase">apr 07/15</span><br>
-                            <a class="raleway11px links text-white text-uppercase text-decoration-none fw-bolder "
-                               href="#">fusce
-                                tincidunt accumsan pretium sit amet</a>
-                        </div>
-                    </div>
-                    <div class="d-flex pb-3">
-                        <img alt="post 1" class="rounded me-2" src="images/post3.png">
-                        <div class="lh-1">
-                            <span class="questrial10px text-white-50 text-uppercase">apr 07/15</span><br>
-                            <a class="raleway11px links text-white text-uppercase text-decoration-none fw-bolder "
-                               href="#">fusce
-                                tincidunt accumsan pretium sit amet</a>
-                        </div>
-                    </div>
-                </div><!--card body-->
-            </div><!--card3-->
-
-            <!-- Vierde kaart: Populaire tags -->
-            <div class="card col-lg-3 col-md-4 border-0 rounded-0 bg-transparent" style="width: 18rem;">
-                <div class="card-body p-0">
-                    <h5 class="card-title raleway13px text-uppercase pb-3 text-white">popular tags</h5>
-                    <div class="col-12 d-flex flex-wrap">
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active tags p-2">HEADPHONES</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active tags p-2">ACCESSORIES</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">NEW</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">WIRELESS</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">CABLES</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">DEVICES</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active tags p-2">GADGETS</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">BRANDS</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">REPLACEMENTS</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">CASES</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">CABLES</a>
-                        </div>
-                        <div class="col-lg-4 col-md-3s col-6 mb-2">
-                            <a class="rounded-pill raleway9px text-white-50 bg-secondary bg-opacity-25 text-decoration-none active  tags p-2">PROFESSIONAL</a>
-                        </div>
-                    </div>
-                </div><!--card body-->
-            </div><!--card4-->
-            <hr class="text-white-50 m-5"><!--border bottom-->
-        </div><!--row-->
-
-        <!-- Rij 2: Onderste informatie -->
-        <div class="row pb-4">
-            <!-- Copyright -->
-            <div class="col-lg-4 col-md-6">
-                <p class="questrial13px text-white-50">© 2015 All rights reserved. Development by <a
-                        class="colorgreen text-decoration-none"
-                        href="#">UnionAgency</a>
-                </p>
-            </div>
-            <!-- Sociale media links -->
-            <div class="col-lg-4 col-md-6 d-flex gap-2">
-                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
-                   href="#">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
-                   href="#">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
-                   href="#">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
-                   href="#">
-                    <i class="fa-brands fa-google-plus-g"></i>
-                </a>
-                <a class="text-decoration-none text-white-50 bg-secondary bg-opacity-50 rounded-circle d-flex justify-content-center align-items-center socials"
-                   href="#">
-                    <i class="fa-brands fa-pinterest-p"></i>
-                </a>
-            </div>
-            <!-- Betaalmogelijkheden -->
-            <div class="col-lg-4 col-md-6 ps-5">
-                <a class="pe-1" href="#"><img alt="payment-1" src="images/payment1.jpg"></a>
-                <a class="pe-1" href="#"><img alt="payment-2" src="images/payment2.jpg"></a>
-                <a class="pe-1" href="#"><img alt="payment-3" src="images/payment3.jpg"></a>
-                <a class="pe-1" href="#"><img alt="payment-4" src="images/payment4.jpg"></a>
-                <a class="pe-1" href="#"><img alt="payment-5" src="images/payment5.jpg"></a>
-                <a class="" href="#"><img alt="payment-6" src="images/payment6.jpg"></a>
-            </div>
-        </div>
-
-    </div><!--container-->
-</footer><!--footer-->
+<div x-html="footer"></div>
 
 <!--modal voor search icoontje-->
 <div aria-hidden="true" class="modal fade w-100" id="exampleModal" tabindex="-1">
@@ -1567,6 +1162,7 @@
     document.getElementById('priceRangeOC').addEventListener('input', function () {
         document.getElementById('rangeValueOC').textContent = "Price: $40-" + this.value;
     });
+
 </script>
 
 <script crossorigin="anonymous"

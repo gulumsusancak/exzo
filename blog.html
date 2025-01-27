@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="css/style.css" rel="stylesheet"><!--style.css-->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+    <!--bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!--bootstrap icons-->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"> <!--google fonts-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!--font awesome icons-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!--animatie met aos-->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>EX ZO - Blog</title>
+</head>
+
+<body x-data="{
+                header: '',
+        footer: '',
+        async loadComponents() {
+            this.header = await (await fetch('components/header.html')).text();
+            this.nav = await (await fetch('components/nav.html')).text();
+            this.footer = await (await fetch('components/footer.html')).text();
+            this.$nextTick(() => { // Wacht tot DOM volledig is bijgewerkt
+                this.markActiveLink();
+            });
+        },
+        markActiveLink() {
+            const currentPath = window.location.pathname.split('/').pop(); // Huidige pagina
+            const navLinks = document.querySelectorAll('a[data-page]'); // Selecteer links met data-page
+
+            navLinks.forEach(link => {
+                link.classList.remove('active'); // Verwijder actieve klasse van alle links
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active'); // Voeg actieve klasse toe aan de juiste link
+                }
+            });
+        }
+}" x-init="loadComponents()">
+
+<div x-html="header"></div>
+<div x-html="nav" class="sticky-top"></div>
+
+
+<div class="container h-100">
+
+    <div class="row mb-5">
+        <div class="d-flex py-4 questrial11px text-secondary">
+            <a class="px-2 text-decoration-none text-secondary links text-uppercase" href="index.html">home</a>
+            <i class="fa-solid fa-angle-right lh-sm text-secondary px-1"></i>
+            <a class="px-2 text-decoration-none text-secondary links text-uppercase" href="blog.html">blog</a>
+        </div>
+    </div><!--row voor locatie links-->
+
+        <div class="row my-5 ">
+            <div class="text-center col-12 mt-5">
+                <span class="text-uppercase questrial14px text-secondary lh-lg">popular products</span>
+                <h1 class="raleway40px text-uppercase mb-0">only best products</h1>
+                <div class="colorgreen p-2 lh-1 mb-4"><span>_ _______ _</span></div>
+            </div>
+        </div>
+
+
+    <div class="row g-4 justify-content-center">
+
+    <div class="col-lg-8 col-md-12">
+
+        <div class="position-relative d-inline-block"><!--thumbnail-->
+            <img src="images/blogthumbnail.png" class="img-fluid rounded-4" alt="thumbnail1"/>
+            <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4 custom-hover-color d-flex justify-content-center align-items-center overlay">
+                <i class="bi bi-plus-lg text-white fs-1 plusIcon"></i>
+            </div>
+        </div><!--thumbnail-->
+
+
+        <div class="mt-4"><!--blog post-->
+            <div class="d-flex">
+                <div class="lh-1 col-lg-1 me-2 ps-3"><!--date-->
+                    <p class="questrial30px text-secondary mb-0">25</p>
+                    <p class="questrial11px text-secondary">APR / 15</p>
+                </div><!--date-->
+
+                <div class="col-lg-11 ps-2 ">
+
+                    <div class="d-flex"><!--comments en likes-->
+                        <div class="text-secondary me-2 questrial11px"><!--comments-->
+                            <i class="bi bi-chat"></i> <span class="ms-1">5</span>
+                        </div><!--comments-->
+                        <div class="text-secondary questrial11px"><!--likes-->
+                            <i class="bi bi-suit-heart"></i> <span class="ms-1">20</span>
+                        </div><!--likes-->
+                    </div><!--comments en likes-->
+
+                    <div class="mb-5">
+                        <h4 class="raleway18px text-dark text-uppercase mt-2">
+                            <a href="#" class="text-decoration-none links text-dark">
+                                Donec dapibus efficitur odio, nec molestie ante tristique vel
+                            </a>
+                        </h4>
+
+                        <div class="d-flex my-3 ">
+                            <a href="#" class="links text-uppercase questrial11px colorgreen me-2 text-decoration-none">john wick</a>
+                            <a href="#" class="links text-uppercase questrial11px colorgreen text-decoration-none">gadgets</a>
+                        </div>
+
+                        <p class="text-secondary questrial13px mb-4">
+                            Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta. Proin ultricies, massa eu aliquam tristique, sapien
+                            tellus gravida eros, eget sollicitudin nisl mi id tortor. Cras enim elit, convallis at imperdiet at, viverra eget diam consectetur euismod
+                            enim.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="#" class="rounded-pill text-uppercase p-3 px-4 learnmorebtn raleway11px text-decoration-none mt-2 fw-bolder w-100 d-block d-lg-inline w-lg-auto text-center position-relative">
+                                    <span class="text">Learn more</span>
+                                    <span class="icon"><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!--d-flex-->
+        </div><!--blog post-->
+
+        <div class="ratio ratio-16x9 mt-5"><!--ipv img-fluid ratio voor iframe-->
+            <iframe
+                    src="https://www.youtube.com/embed/9G3VOjFUe48"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div><!--iframe-->
+
+        <div class="mt-4"><!--blog post 2-->
+            <div class="d-flex">
+                <div class="lh-1 col-lg-1 me-2 ps-3"><!--date-->
+                    <p class="questrial30px text-secondary mb-0">23</p>
+                    <p class="questrial11px text-secondary">APR / 15</p>
+                </div><!--date-->
+
+                <div class="col-lg-11 ps-2 ">
+
+                    <div class="d-flex"><!--comments en likes-->
+                        <div class="text-secondary me-2 questrial11px"><!--comments-->
+                            <i class="bi bi-chat"></i> <span class="ms-1">5</span>
+                        </div><!--comments-->
+                        <div class="text-secondary questrial11px"><!--likes-->
+                            <i class="bi bi-suit-heart"></i> <span class="ms-1">20</span>
+                        </div><!--likes-->
+                    </div><!--comments en likes-->
+
+                    <div class="mb-5">
+                        <h4 class="raleway18px text-dark text-uppercase mt-2">
+                            <a href="#" class="text-decoration-none links text-dark">
+                                Donec dapibus efficitur odio, nec molestie ante tristique vel
+                            </a>
+                        </h4>
+
+                        <div class="d-flex my-3">
+                            <a href="#" class="links text-uppercase questrial11px colorgreen me-2 text-decoration-none">john wick</a>
+                            <a href="#" class="links text-uppercase questrial11px colorgreen text-decoration-none">gadgets</a>
+                        </div>
+
+                        <p class="text-secondary questrial13px mb-4">
+                            Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta. Proin ultricies, massa eu aliquam tristique, sapien
+                            tellus gravida eros, eget sollicitudin nisl mi id tortor. Cras enim elit, convallis at imperdiet at, viverra eget diam consectetur euismod
+                            enim.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="#" class="rounded-pill text-uppercase p-3 px-4 learnmorebtn raleway11px text-decoration-none mt-2 fw-bolder w-100 d-block d-lg-inline w-lg-auto text-center position-relative">
+                                    <span class="text">Learn more</span>
+                                    <span class="icon"><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!--d-flex-->
+        </div><!--blog post 2-->
+
+        <div class="text-center align-items-center w-100 text-uppercase rounded-4 p-5 mt-5" style="background-color:#333333">
+            <i class="bi bi-quote colorgreen fs-2"></i>
+            <h5 class="raleway18px text-light mt-3" style="font-weight: 700">Nunc ultrices augue ac malesuada finibus. Sed quis egestas. Suspendisse enim nibh gravida quam.</h5>
+            <h6 class="raleway13px text-light mt-3 mb-0">dorian gray</h6>
+            <p class="questrial11px text-light text-opacity-50 lh-lg mb-4">ceo doodle ink.</p>
+        </div>
+
+        <div class="mt-4"><!--blog post 3-->
+            <div class="d-flex">
+                <div class="lh-1 col-lg-1 me-2 ps-3"><!--date-->
+                    <p class="questrial30px text-secondary mb-0">12</p>
+                    <p class="questrial11px text-secondary">APR / 15</p>
+                </div><!--date-->
+
+                <div class="col-lg-11 ps-2 ">
+
+                    <div class="d-flex"><!--comments en likes-->
+                        <div class="text-secondary me-2 questrial11px"><!--comments-->
+                            <i class="bi bi-chat"></i> <span class="ms-1">5</span>
+                        </div><!--comments-->
+                        <div class="text-secondary questrial11px"><!--likes-->
+                            <i class="bi bi-suit-heart"></i> <span class="ms-1">20</span>
+                        </div><!--likes-->
+                    </div><!--comments en likes-->
+
+                    <div class="mb-5">
+                        <h4 class="raleway18px text-dark text-uppercase mt-2">
+                            <a href="#" class="text-decoration-none links text-dark">
+                                Donec dapibus efficitur odio, nec molestie ante tristique vel
+                            </a>
+                        </h4>
+
+                        <div class="d-flex my-3">
+                            <a href="#" class="links text-uppercase questrial11px colorgreen me-2 text-decoration-none">john wick</a>
+                            <a href="#" class="links text-uppercase questrial11px colorgreen text-decoration-none">gadgets</a>
+                        </div>
+
+                        <p class="text-secondary questrial13px mb-4">
+                            Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta. Proin ultricies, massa eu aliquam tristique, sapien
+                            tellus gravida eros, eget sollicitudin nisl mi id tortor. Cras enim elit, convallis at imperdiet at, viverra eget diam consectetur euismod
+                            enim.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="#" class="rounded-pill text-uppercase p-3 px-4 learnmorebtn raleway11px text-decoration-none mt-2 fw-bolder w-100 d-block d-lg-inline w-lg-auto text-center position-relative">
+                                    <span class="text">Learn more</span>
+                                    <span class="icon"><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!--d-flex-->
+        </div><!--blog post 3-->
+
+
+        <div id="carouselExample" class="carousel slide mt-5">
+            <div class="carousel-inner rounded-4">
+                <div class="carousel-item active">
+                    <img src="images/blogthumbnail2.png" class="d-block w-100" alt="thumbnail">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/blogthumbnail.png" class="d-block w-100" alt="thumbnail">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="mt-4"><!--blog post 4-->
+            <div class="d-flex">
+                <div class="lh-1 col-lg-1 me-2 ps-3"><!--date-->
+                    <p class="questrial30px text-secondary mb-0">9</p>
+                    <p class="questrial11px text-secondary">APR / 15</p>
+                </div><!--date-->
+
+                <div class="col-lg-11 ps-2 ">
+
+                    <div class="d-flex"><!--comments en likes-->
+                        <div class="text-secondary me-2 questrial11px"><!--comments-->
+                            <i class="bi bi-chat"></i> <span class="ms-1">5</span>
+                        </div><!--comments-->
+                        <div class="text-secondary questrial11px"><!--likes-->
+                            <i class="bi bi-suit-heart"></i> <span class="ms-1">20</span>
+                        </div><!--likes-->
+                    </div><!--comments en likes-->
+
+                    <div class="mb-5">
+                        <h4 class="raleway18px text-dark text-uppercase mt-2">
+                            <a href="#" class="text-decoration-none links text-dark">
+                                Donec dapibus efficitur odio, nec molestie ante tristique vel
+                            </a>
+                        </h4>
+
+                        <div class="d-flex my-3">
+                            <a href="#" class="links text-uppercase questrial11px colorgreen me-2 text-decoration-none">john wick</a>
+                            <a href="#" class="links text-uppercase questrial11px colorgreen text-decoration-none">gadgets</a>
+                        </div>
+
+                        <p class="text-secondary questrial13px mb-4">
+                            Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta. Proin ultricies, massa eu aliquam tristique, sapien
+                            tellus gravida eros, eget sollicitudin nisl mi id tortor. Cras enim elit, convallis at imperdiet at, viverra eget diam consectetur euismod
+                            enim.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="#" class="rounded-pill text-uppercase p-3 px-4 learnmorebtn raleway11px text-decoration-none mt-2 fw-bolder w-100 d-block d-lg-inline w-lg-auto text-center position-relative">
+                                    <span class="text">Learn more</span>
+                                    <span class="icon"><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!--d-flex-->
+        </div><!--blog post 4-->
+
+        <!--navigatie knoppen-->
+        <div class="row justify-content-center align-items-center my-4">
+            <!--previous page knop-->
+            <div class="col-lg-2 d-none d-lg-block">
+                <a class="btn border rounded-pill text-secondary text-uppercase raleway11px fw-bold px-3 py-2"
+                   href="#">Prev page</a>
+            </div>
+            <!--pagina nummers-->
+            <div class="col-lg-8 col-12 text-center">
+                <a class="questrial11px text-white btn border border-rounded me-1 "
+                   href="#" style="background-color: #b8cd06">1</a>
+                <a class="questrial11px text-secondary btn border border-rounded me-1" href="#">2</a>
+                <a class="questrial11px text-secondary btn border border-rounded me-1" href="#">3</a>
+                <a class="questrial11px text-secondary btn border border-rounded" href="#">4</a>
+                <span class="mx-3 questrial11px text-secondary pt-2">...</span>
+                <a class="questrial11px text-secondary btn border border-rounded" href="#">23</a>
+            </div>
+            <!--next page knop-->
+            <div class="col-lg-2 d-none d-lg-block">
+                <a class="btn border rounded-pill text-secondary text-uppercase raleway11px fw-bold px-3 py-2"
+                   href="#">next page</a>
+            </div>
+        </div><!--navigatie knoppen-->
+
+
+    </div><!--col-lg-8-->
+
+    <div class="col-lg-3 col-md-12">
+
+        <div class="input-group mb-5 ms-3 text-secondary"> <!--search keyword-->
+            <input class="form-control rounded-pill border questrial11px py-3 px-3 small "
+                   id="keyword"
+                   placeholder="Enter keyword"
+                   type="text"
+                   aria-label="keyword">
+            <button class="input-group-text bg-transparent border-0 position-absolute end-0 top-50 translate-middle-y pe-3 z-index-1">
+                <i class="bi bi-search text-secondary"></i>
+            </button>
+        </div><!--search keyword-->
+
+        <div><!--categories div-->
+            <h4 class="raleway18px text-uppercase mb-2 ms-3">categories</h4>
+            <ul class="list-group list-group-flush text-uppercase fw-bold raleway11px">
+                <li class="list-group-item rounded-0 btn-group dropdown lh-3">
+                    <a href="#" class="text-decoration-none text-secondary links d-flex justify-content-between">
+                        <span>Laptops & computers</span>
+                    </a>
+                </li>
+                <li class="list-group-item rounded-0 btn-group dropdown lh-3">
+                    <a href="#" class="text-decoration-none text-secondary links d-flex justify-content-between">
+                        <span>video & photo camera</span>
+                    </a>
+                </li>
+                <li class="list-group-item rounded-0 btn-group dropdown lh-3">
+                    <a href="#" class="text-decoration-none text-secondary links d-flex justify-content-between">
+                        <span>smartphones</span>
+                    </a>
+                </li>
+                <li class="list-group-item rounded-0 btn-group dropdown lh-3">
+                    <a href="#" class="text-decoration-none text-secondary links d-flex justify-content-between">
+                        <span>tv & audio</span>
+                    </a>
+                </li>
+                <li class="list-group-item rounded-0 btn-group dropdown lh-3">
+                    <a href="#" class="text-decoration-none text-secondary links d-flex justify-content-between">
+                        <span>gadgets</span>
+                    </a>
+                </li>
+            </ul>
+        </div><!--categories div-->
+
+
+        <div class="mt-5 ms-3"><!--popular tags-->
+            <h4 class="raleway18px text-uppercase mb-4 ">popular tags</h4>
+            <div class="position-relative d-inline-block"><!--thumbnail-->
+                <img src="images/blogptag1.png" alt="popular tag 1 " class="img-fluid rounded-4">
+                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4 custom-hover-color d-flex justify-content-center align-items-center overlay">
+                    <i class="bi bi-plus-lg text-white fs-1 plusIcon"></i>
+                </div>
+            </div><!--thumbnail-->
+            <h5 class="raleway13px text-dark text-uppercase mt-3">
+                <a href="#" class="text-decoration-none links text-dark mt-5">
+                    Phasellus rhoncus in nunc sit
+                </a>
+            </h5>
+            <div>
+                    <span class="questrial11px text-secondary">
+                    APR 07 / 15
+                        <a href="#" class="links text-uppercase questrial11px colorgreen mx-1 text-decoration-none ">john wick</a>
+                        <a href="#" class="links text-uppercase questrial11px colorgreen text-decoration-none">gadgets</a>
+                    </span>
+            </div>
+        </div><!--popular tags-->
+
+        <div class="mt-4 ms-3"><!--popular tags 2-->
+            <div class="position-relative d-inline-block"><!--thumbnail 2-->
+                <img src="images/blogptag2.png" alt="popular tag 2 " class="img-fluid rounded-4">
+                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4 custom-hover-color d-flex justify-content-center align-items-center overlay">
+                    <i class="bi bi-plus-lg text-white fs-1 plusIcon"></i>
+                </div>
+            </div><!--thumbnail 2-->
+            <h5 class="raleway13px text-dark text-uppercase mt-3">
+                <a href="#" class="text-decoration-none links text-dark mt-5">
+                    Fusce viverra id diam nec
+                </a>
+            </h5>
+            <div>
+                    <span class="questrial11px text-secondary">
+                    APR 07 / 15
+                        <a href="#" class="links text-uppercase questrial11px colorgreen mx-1 text-decoration-none ">john wick</a>
+                        <a href="#" class="links text-uppercase questrial11px colorgreen text-decoration-none">gadgets</a>
+                    </span>
+            </div>
+        </div><!--popular tags 2-->
+
+        <h4 class="raleway18px text-uppercase mb-4 ms-3 mt-5">popular tags</h4>
+        <div class="row col-10 ms-1 justify-content-center">
+            <!-- alle popular tags -->
+            <div class="d-flex flex-wrap justify-content-start">
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">HEADPHONES</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">ACCESSORIES</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">NEW</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">WIRELESS</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">CABLES</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">DEVICES</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">GADGETS</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">BRANDS</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">REPLACEMENTS</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">CASES</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">CABLES</a>
+                <a class="rounded-pill raleway9px text-secondary text-decoration-none tags p-2 m-1">PROFESSIONAL</a>
+            </div>
+        </div>
+
+        <!--youtube channel-->
+        <h4 class="raleway18px text-uppercase mb-4 ms-3 mt-5">youtube channel</h4>
+
+        <!-- Carousel -->
+        <div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-indicators ">
+                <button aria-current="true" aria-label="Slide 1" class="active rounded-circle mt-3"
+                        data-bs-slide-to="0"
+                        data-bs-target="#myCarousel"
+                        style="width: 10px; height: 10px;border: 3px #b8cd06 solid;background: transparent;"
+                        type="button"></button>
+                <button aria-label="Slide 2" class="rounded-circle mt-3" data-bs-slide-to="1"
+                        data-bs-target="#myCarousel"
+                        style="width: 10px; height: 10px;border: 3px #b8cd06 solid; background: transparent"
+                        type="button"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Eerste item -->
+                <div class="carousel-item active">
+                    <div class="position-relative">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#youtubeModal">
+                            <img src="images/blogyoutube.png" alt="youtube channel" class="img-fluid rounded-4 ms-3">
+                            <!-- Play-icoon -->
+                            <div class="position-absolute play-icon-container ">
+                                <i class="fa-solid fa-play text-white play-icon d-flex align-items-center justify-content-center rounded-circle"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <h5 class="raleway13px text-dark text-uppercase mt-3 ms-3">Phasellus rhoncus in nunc sit</h5>
+                    <p class="questrial11px text-secondary ms-3 mt-2 mb-5">Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta.</p>
+                </div>
+
+                <!-- Tweede item -->
+                <div class="carousel-item">
+                    <div class="position-relative">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#youtubeModal">
+                            <img src="images/blogyoutube2.png" alt="youtube channel" class="img-fluid rounded-4 ms-3">
+                            <!-- Play-icoon -->
+                            <div class="position-absolute play-icon-container">
+                                <i class="fa-solid fa-play text-white play-icon d-flex align-items-center justify-content-center rounded-circle"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <h5 class="raleway13px text-dark text-uppercase mt-3 ms-3">Phasellus rhoncus in nunc sit</h5>
+                    <p class="questrial11px text-secondary ms-3 mt-2 mb-5">Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal voor de carousel-->
+        <div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="youtubeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- YouTube iframe -->
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/kQT2y3UiosQ" title="YouTube video" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--youtube channel-->
+
+
+    </div><!--col-lg-3-->
+
+    </div><!--row voor de main inhoud-->
+
+
+
+</div><!--container-->
+
+
+<div x-html="footer" class="mt-5"></div>
+
+<!--modal voor search icoontje-->
+<div aria-hidden="true" class="modal fade w-100" id="exampleModal" tabindex="-1">
+    <div class="modal-dialog modal-xl d-flex justify-content-center align-items-center vh-100">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Search product</h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input class="form-control" placeholder="Search..." type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+
+<script crossorigin="anonymous"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--bootstrap script-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><!--animatie aos-->
+<script>
+    AOS.init();
+</script><!--animatie aos tweede script-->
+</body>
+</html>
