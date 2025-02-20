@@ -24,6 +24,7 @@
 
 <body x-data="{
                 header: '',
+                nav:'',
         footer: '',
         async loadComponents() {
             this.header = await (await fetch('components/header.html')).text();
@@ -478,8 +479,10 @@
                             </div>
                         </a>
                     </div>
-                    <h5 class="raleway13px text-dark text-uppercase mt-3 ms-3">Phasellus rhoncus in nunc sit</h5>
-                    <p class="questrial11px text-secondary ms-3 mt-2 mb-5">Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta.</p>
+                    <div class="mt-2">
+                        <a class="text-decoration-none links text-dark ms-3 raleway13px text-uppercase">Phasellus rhoncus in nunc sit</a>
+                        <p class="questrial11px text-secondary ms-3 mt-2 mb-5">Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta.</p>
+                    </div>
                 </div>
 
                 <!-- Tweede item -->
@@ -493,8 +496,10 @@
                             </div>
                         </a>
                     </div>
-                    <h5 class="raleway13px text-dark text-uppercase mt-3 ms-3">Phasellus rhoncus in nunc sit</h5>
-                    <p class="questrial11px text-secondary ms-3 mt-2 mb-5">Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta.</p>
+                    <div class="mt-2">
+                        <a class="text-decoration-none links text-dark ms-3 raleway13px text-uppercase">Phasellus rhoncus in nunc sit</a>
+                        <p class="questrial11px text-secondary ms-3 mt-2 mb-5">Duis fringilla felis et faucibus semper. Aliquam gravida elit et lectus viverra porta.</p>
+                    </div>
                 </div>
             </div>
         </div>
