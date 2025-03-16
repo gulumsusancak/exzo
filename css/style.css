@@ -102,6 +102,7 @@ header a:hover{
     color: white !important;
 }
 
+
 /*index.html*/
 /*choose color boxes*/
 .color-box {
@@ -229,6 +230,23 @@ input::placeholder {
 
 
 
+/* Hide header on screens smaller than 1290px */
+@media (max-width: 1290px) {
+    #header-contact {
+        display: none !important;
+    }
+}
+
+/* Show header on screens 1290px and larger */
+@media (min-width: 1290px) {
+    #header-contact {
+        display: flex !important;
+    }
+    /* Align controls to the end on screens 1290px and larger */
+    #header-controls {
+        justify-content: flex-end !important;
+    }
+}
 
 
 
