@@ -44,7 +44,7 @@
 .questrial14px{
     font-family: "Questrial",sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 400;+
 }
 .questrial13px{
     font-family: "Questrial",sans-serif;
@@ -218,6 +218,7 @@ input::placeholder {
     transform: translate(-50%, -50%);
     z-index: 10;
 }
+
 /* voor middelscherm : icoon naar linksboven */
 @media (max-width: 991px) {
     .play-icon-container {
@@ -226,17 +227,12 @@ input::placeholder {
         transform: none; /* Geen transformatie meer */
     }
 }
-
-
-
-
 /* Hide header on screens smaller than 1290px */
 @media (max-width: 1290px) {
     #header-contact {
         display: none !important;
     }
 }
-
 /* Show header on screens 1290px and larger */
 @media (min-width: 1290px) {
     #header-contact {
@@ -247,8 +243,13 @@ input::placeholder {
         justify-content: flex-end !important;
     }
 }
+/*op kleinere schermen margins wegdoen*/
+@media (max-width: 767px) {
+    .carousel {
+        margin: 0 auto;
+    }
 
-
+}
 
 /*footer*/
 .socials{
@@ -259,10 +260,3 @@ input::placeholder {
     background-color: #b8cd06!important;
 }
 
-/*op kleinere schermen margins wegdoen*/
-@media (max-width: 767px) {
-    .carousel {
-        margin: 0 auto;
-    }
-
-}
